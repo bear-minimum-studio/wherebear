@@ -17,3 +17,6 @@ func _bite() -> void:
 		if(overlapping_area is HurtBox && overlapping_area.owner is NonPlayableBear):
 			overlapping_area.owner.contaminate()
 			break
+
+func catch() -> void:
+	Logger.debug("Caught")
