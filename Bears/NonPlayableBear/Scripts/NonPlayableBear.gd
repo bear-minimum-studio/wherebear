@@ -23,7 +23,8 @@ func _parse_inputs() -> void:
 func _update() -> void:
 	# TODO Implement real conditions
 	if(get_position().y < 50 || get_position().y > 550):
-		kill()
+		pass
+#		kill()
 	if(get_position().y < 300):
 		heal()
 	if(get_position().y > 300):
