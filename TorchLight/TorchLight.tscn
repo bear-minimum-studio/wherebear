@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://TorchLight/Resources/TorchLight.png" type="Texture" id=1]
+[ext_resource path="res://TorchLight/Resources/TorchLightGradient.png" type="Texture" id=1]
 [ext_resource path="res://TorchLight/Scripts/TorchLightDebugSprite.gd" type="Script" id=2]
 
 [node name="TorchLight" type="Light2D"]
 position = Vector2( 166, 0 )
 scale = Vector2( 0.647031, 0.609989 )
 texture = ExtResource( 1 )
+color = Color( 1, 0.972549, 0.529412, 1 )
 mode = 2
 range_height = -864.3
 range_z_min = -1804

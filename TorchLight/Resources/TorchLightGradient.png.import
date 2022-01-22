@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TorchLight.png-10f3ce70a726c30ed4307cf49942f5d0.stex"
+path="res://.import/TorchLightGradient.png-1c968603c2e9c766cf8e595845ba2b26.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TorchLight/Resources/TorchLight.png"
-dest_files=[ "res://.import/TorchLight.png-10f3ce70a726c30ed4307cf49942f5d0.stex" ]
+source_file="res://TorchLight/Resources/TorchLightGradient.png"
+dest_files=[ "res://.import/TorchLightGradient.png-1c968603c2e9c766cf8e595845ba2b26.stex" ]
 
 [params]
 
