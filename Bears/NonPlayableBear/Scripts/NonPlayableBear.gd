@@ -1,3 +1,4 @@
+class_name NonPlayableBear
 extends GenericBear
 
 const POSSIBLE_ACTIONS := [
@@ -42,12 +43,8 @@ func _parse_inputs() -> void:
 func _update(_delta) -> void:
 	# TODO Implement real conditions
 	if(get_position().y < 50 || get_position().y > 550):
-		pass
 #		kill()
-	if(get_position().y < 300):
-		decontaminate()
-	if(get_position().y > 300):
-		contaminate()
+		pass
 	if(get_position().x > 512):
 		metamorphose()
 	if(get_position().x < 512):

@@ -9,6 +9,8 @@ const ROULADE_SPEED := 140.0
 ###########
 
 onready var _sprite := $Sprite
+onready var hurt_box := $HurtBox
+onready var hit_box := $HitBox
 onready var move_state_machine := $MoveStateMachine
 onready var animation_player := $AnimationPlayer
 

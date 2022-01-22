@@ -1,3 +1,4 @@
+class_name SeekerBear
 extends GenericBear
 
 onready var _torch_light_handle := $TorchLightHandle
