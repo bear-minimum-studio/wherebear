@@ -45,7 +45,11 @@ script = ExtResource( 7 )
 [node name="Roulade" type="Node" parent="MoveStateMachine"]
 script = ExtResource( 5 )
 
-[node name="RouladeTimer" type="Timer" parent="MoveStateMachine/Roulade"]
+[node name="RouladeDurationTimer" type="Timer" parent="MoveStateMachine/Roulade"]
 one_shot = true
 
-[connection signal="timeout" from="MoveStateMachine/Roulade/RouladeTimer" to="MoveStateMachine/Roulade" method="_on_RouladeTimer_timeout"]
+[node name="RouladeCooldownTimer" type="Timer" parent="MoveStateMachine/Roulade"]
+one_shot = true
+
+[connection signal="timeout" from="MoveStateMachine/Roulade/RouladeDurationTimer" to="MoveStateMachine/Roulade" method="_on_RouladeDurationTimer_timeout"]
+[connection signal="timeout" from="MoveStateMachine/Roulade/RouladeCooldownTimer" to="MoveStateMachine/Roulade" method="_on_RouladeCooldownTimer_timeout"]
