@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bears/GenericBear/GenericBear.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Bears/NonPlayableBear/Scripts/NonPlayableBear.gd" type="Script" id=2]
+
+[node name="NonPlayableBear" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DirectionTimer" type="Timer" parent="." index="2"]

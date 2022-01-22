@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bears/GenericBear/Scripts/GenericBear.gd" type="Script" id=1]
+[ext_resource path="res://Bears/GenericBear/Scripts/Sprite.gd" type="Script" id=2]
+[ext_resource path="res://Bears/GenericBear/Ressources/WhiteSquare.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="GenericBear" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
