@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Bears/SeekerBear/SeekerBear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Wall/Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/DumbBackground.png" type="Texture" id=3]
 [ext_resource path="res://Game/Game.gd" type="Script" id=4]
@@ -113,3 +114,6 @@ rotation = 1.5708
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 508, 291.5 )
 shape = SubResource( 1 )
+
+[node name="SeekerBear" parent="." instance=ExtResource( 1 )]
+position = Vector2( 606, 312 )

@@ -16,7 +16,4 @@ script = ExtResource( 9 )
 [node name="ActionTimer" type="Timer" parent="." index="3"]
 one_shot = true
 
-[node name="MoveStateMachine" parent="." index="4"]
-initial_state = NodePath("Idle")
-
 [connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]
