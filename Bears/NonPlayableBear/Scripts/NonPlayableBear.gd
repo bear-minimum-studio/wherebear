@@ -73,6 +73,7 @@ func metamorphose() -> void:
 		
 	metamorphosed = true
 #	_set_sprite(_transformed_sprite)
+	_sprite.set_modulate(Color(0, 1, 0))
 	Logger.debug('Metamorphosed')
 
 func unmetamorphose() -> void:
@@ -81,6 +82,7 @@ func unmetamorphose() -> void:
 	
 	metamorphosed = false
 #	_set_sprite(_untransformed_sprite)
+	_sprite.set_modulate(Color(1, 1, 1))
 	Logger.debug('Unmetamorphosed')
 
 func _start_action_timer() -> void:
