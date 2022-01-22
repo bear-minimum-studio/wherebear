@@ -11,5 +11,4 @@ _untransformed_sprite = ExtResource( 3 )
 _transformed_sprite = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 3 )
 script = ExtResource( 9 )
