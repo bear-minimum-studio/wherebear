@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bears/GenericBear/Scripts/GenericBear.gd"
 }, {
-"base": "Reference",
+"base": "Sprite",
 "class": "GenericBearSprite",
 "language": "GDScript",
 "path": "res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd"

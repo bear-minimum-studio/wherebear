@@ -9,11 +9,11 @@
 [ext_resource path="res://Bears/NonPlayableBear/Scripts/Healthy.gd" type="Script" id=7]
 [ext_resource path="res://Bears/NonPlayableBear/Scripts/Dead.gd" type="Script" id=8]
 [ext_resource path="res://Bears/NonPlayableBear/Scripts/Sprite.gd" type="Script" id=9]
-[ext_resource path="res://Bears/NonPlayableBear/Ressources/GreenSquare.png" type="Texture" id=10]
-[ext_resource path="res://Bears/NonPlayableBear/Ressources/WhiteSquare.png" type="Texture" id=11]
+[ext_resource path="res://Utils/Resources/GreenSquare.png" type="Texture" id=10]
+[ext_resource path="res://Utils/Resources/WhiteSquare.png" type="Texture" id=11]
 [ext_resource path="res://Bears/NonPlayableBear/Scripts/WereBearStateMachine.gd" type="Script" id=12]
-[ext_resource path="res://Utils/StateMachine/State/Scripts/Transformed.gd" type="Script" id=13]
-[ext_resource path="res://Utils/StateMachine/State/Scripts/Untransformed.gd" type="Script" id=14]
+[ext_resource path="res://Bears/NonPlayableBear/Scripts/Transformed.gd" type="Script" id=13]
+[ext_resource path="res://Bears/NonPlayableBear/Scripts/Untransformed.gd" type="Script" id=14]
 
 [node name="NonPlayableBear" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

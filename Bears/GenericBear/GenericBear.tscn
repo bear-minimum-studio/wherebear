@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBear.gd" type="Script" id=1]
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd" type="Script" id=2]
-[ext_resource path="res://Bears/GenericBear/Ressources/WhiteSquare.png" type="Texture" id=3]
+[ext_resource path="res://Utils/Resources/WhiteSquare.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 

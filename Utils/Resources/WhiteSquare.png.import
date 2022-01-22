@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WhiteSquare.png-f4ca91a175b766cbb85037e2561628d1.stex"
+path="res://.import/WhiteSquare.png-bddb9c48d6b0df6b1051a4ec874fbe2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bears/GenericBear/Ressources/WhiteSquare.png"
-dest_files=[ "res://.import/WhiteSquare.png-f4ca91a175b766cbb85037e2561628d1.stex" ]
+source_file="res://Utils/Resources/WhiteSquare.png"
+dest_files=[ "res://.import/WhiteSquare.png-bddb9c48d6b0df6b1051a4ec874fbe2c.stex" ]
 
 [params]
 

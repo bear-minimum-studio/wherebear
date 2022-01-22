@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GreenSquare.png-d2dfedbf72b3ea9506949af55e1f2a26.stex"
+path="res://.import/GreenSquare.png-78c591de86e03e3dab67971d5478b0eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bears/NonPlayableBear/Ressources/GreenSquare.png"
-dest_files=[ "res://.import/GreenSquare.png-d2dfedbf72b3ea9506949af55e1f2a26.stex" ]
+source_file="res://Utils/Resources/GreenSquare.png"
+dest_files=[ "res://.import/GreenSquare.png-78c591de86e03e3dab67971d5478b0eb.stex" ]
 
 [params]
 
