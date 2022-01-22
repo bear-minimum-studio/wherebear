@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DumbBackground.png-0e4d493b330d780ff00e2fe59910fdf4.stex"
+path="res://.import/DumbBackground.png-5bd8a2a98fe21e279eab1ba354a20977.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DumbBackground.png"
-dest_files=[ "res://.import/DumbBackground.png-0e4d493b330d780ff00e2fe59910fdf4.stex" ]
+source_file="res://World/DumbBackground.png"
+dest_files=[ "res://.import/DumbBackground.png-5bd8a2a98fe21e279eab1ba354a20977.stex" ]
 
 [params]
 
