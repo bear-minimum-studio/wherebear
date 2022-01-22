@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd"
 }, {
+"base": "Reference",
+"class": "Logger",
+"language": "GDScript",
+"path": "res://Utils/Logger/Scripts/Logger.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -32,6 +37,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "GenericBear": "",
 "GenericBearSprite": "",
+"Logger": "",
 "State": "",
 "StateMachine": ""
 }

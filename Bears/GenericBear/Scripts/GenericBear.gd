@@ -37,13 +37,12 @@ func _update_velocity() -> void:
 func _physics_process(_delta) -> void:
 	_parse_inputs()
 	_update_velocity()
-	
-	_sprite.set_orientation(_velocity.x)
+	_sprite.set_orientation(_velocity)
 	_update()
 
 func _roulade() -> void:
 	# TODO implement real roulade mekanixXxXXx
-	print('roulade')
+	Logger.debug('Roulade')
 
 func _set_sprite(texture: Texture) -> void:
 	_sprite.set_texture(texture)

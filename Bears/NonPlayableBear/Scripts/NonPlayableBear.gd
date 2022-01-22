@@ -39,14 +39,14 @@ func contaminate() -> void:
 		return
 	
 	contaminated = true
-	print('Contaminated')
+	Logger.debug('Contaminated')
 	
 func heal() -> void:
 	if(!contaminated):
 		return
 	
 	contaminated = false
-	print('Healthy')
+	Logger.debug('Healthy')
 
 
 func transform() -> void:
@@ -56,7 +56,7 @@ func transform() -> void:
 	if(contaminated):
 		transformed = true
 		_set_sprite(_transformed_sprite)
-	print('Transformed')
+	Logger.debug('Transformed')
 
 func untransform() -> void:
 	if(!transformed):
@@ -64,4 +64,4 @@ func untransform() -> void:
 	
 	transformed = false
 	_set_sprite(_untransformed_sprite)
-	print('Untransformed')
+	Logger.debug('Untransformed')
