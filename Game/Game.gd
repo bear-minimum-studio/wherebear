@@ -4,6 +4,7 @@ const NUMBER_OF_BEARS = 3
 
 onready var spawn_zone_area = $SpawnZone/SpawnZoneShape
 onready var spawn_zone = $SpawnZone
+onready var canvas_modulate = $CanvasModulate
 
 var non_playable_bear_scene = preload("res://Bears/NonPlayableBear/NonPlayableBear.tscn")
 
@@ -24,4 +25,17 @@ func _ready():
 		new_bear.position.y = y + spawn_zone_top_left_absolute_coordinates_y
 		self.add_child(new_bear)
 
+func trigger_night():
+	Events.emit_signal("night_starts")
+	canvas_modulate.visible = true
 
+func trigger_day():
+	Events.emit_signal("day_starts")
+	canvas_modulate.visible = false
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		trigger_night()
+	if event.is_action_pressed("ui_cancel"):
+		trigger_day()
+	pass
