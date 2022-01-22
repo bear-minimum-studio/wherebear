@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/good_bear_v8.png-1a44855851baa27a5140a2e76bf5191f.stex"
+path="res://.import/good_bear.png-6232bc93ee4bf076a9a5e71c8d6d06a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bears/NonPlayableBear/good_bear_v8.png"
-dest_files=[ "res://.import/good_bear_v8.png-1a44855851baa27a5140a2e76bf5191f.stex" ]
+source_file="res://Bears/NonPlayableBear/good_bear.png"
+dest_files=[ "res://.import/good_bear.png-6232bc93ee4bf076a9a5e71c8d6d06a8.stex" ]
 
 [params]
 

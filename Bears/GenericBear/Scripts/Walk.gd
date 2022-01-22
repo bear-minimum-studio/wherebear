@@ -1,6 +1,9 @@
 # Walk.gd
 extends State
 
+func enter(_msg := {}) -> void:
+	owner.animation_player.play("Walk")
+
 func update(_delta: float) -> void:
 	if(owner._roulade):
 		state_machine.transition_to("Roulade")

@@ -3,6 +3,7 @@ extends State
 
 func enter(_msg := {}) -> void:
 	owner._velocity = Vector2.ZERO
+	owner.animation_player.play("Idle")
 
 func update(_delta: float) -> void:
 	if(owner._input_vector == Vector2.ZERO):

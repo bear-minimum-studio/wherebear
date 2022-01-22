@@ -10,6 +10,7 @@ const ROULADE_SPEED := 140.0
 
 onready var _sprite := $Sprite
 onready var move_state_machine := $MoveStateMachine
+onready var animation_player := $AnimationPlayer
 
 var _velocity := Vector2.ZERO
 var _input_vector := Vector2.ZERO
