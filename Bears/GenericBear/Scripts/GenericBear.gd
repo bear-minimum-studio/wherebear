@@ -17,22 +17,21 @@ onready var animation_player := $AnimationPlayer
 var _velocity := Vector2.ZERO
 var _input_vector := Vector2.ZERO
 var _roulade := false
+var player_id := -1
 
-func _ready() -> void:
-	pass
 
 # Virtual function to override
 # Used to get direction of movement
 func _update_input_vector() -> void:
 	_input_vector = Vector2.ZERO
 	
-	if (Input.is_action_pressed("p1_move_left")):
+	if (Input.is_action_pressed("p%d_move_left" % player_id)):
 		_input_vector += Vector2.LEFT
-	if (Input.is_action_pressed("p1_move_right")):
+	if (Input.is_action_pressed("p%d_move_right" % player_id)):
 		_input_vector += Vector2.RIGHT
-	if (Input.is_action_pressed("p1_move_up")):
+	if (Input.is_action_pressed("p%d_move_up" % player_id)):
 		_input_vector += Vector2.UP
-	if (Input.is_action_pressed("p1_move_down")):
+	if (Input.is_action_pressed("p%d_move_down" % player_id)):
 		_input_vector += Vector2.DOWN
 	
 	_input_vector = _input_vector.normalized()
@@ -42,7 +41,7 @@ func _update_input_vector() -> void:
 func _parse_inputs() -> void:
 	_update_input_vector()
 	
-	if (Input.is_action_pressed("p1_roll")):
+	if (Input.is_action_pressed("p%d_roll" % player_id)):
 		_roulade = true
 	else:
 		_roulade = false

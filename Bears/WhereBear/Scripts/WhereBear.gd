@@ -1,11 +1,14 @@
 class_name WhereBear
 extends GenericBear
 
+func _ready() -> void:
+	player_id = 1
+
 # Virtual function to override
 # Used to handle all inputs/actions
 func _parse_inputs() -> void:
 	._parse_inputs()
-	if(Input.is_action_just_pressed("p1_contaminate")):
+	if(Input.is_action_just_pressed("p%d_contaminate" % player_id)):
 		_bite()
 
 func _bite() -> void:
