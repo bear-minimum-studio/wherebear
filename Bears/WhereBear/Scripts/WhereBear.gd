@@ -8,7 +8,7 @@ func _ready() -> void:
 # Used to handle all inputs/actions
 func _parse_inputs() -> void:
 	._parse_inputs()
-	if(Input.is_action_just_pressed("p%d_contaminate" % player_id)):
+	if(Input.is_action_just_pressed("p%d_primary_action" % player_id)):
 		_bite()
 
 func _bite() -> void:

@@ -18,7 +18,7 @@ func _update(_delta) -> void:
 # Used to handle all inputs/actions
 func _parse_inputs() -> void:
 	._parse_inputs()
-	if(Input.is_action_just_pressed("p%d_catch" % player_id)):
+	if(Input.is_action_just_pressed("p%d_primary_action" % player_id)):
 		_catch()
 
 func _catch() -> void:
