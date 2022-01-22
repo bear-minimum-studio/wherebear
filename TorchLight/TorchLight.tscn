@@ -2,8 +2,8 @@
 
 [ext_resource path="res://TorchLight/Resources/TorchLight.png" type="Texture" id=1]
 
-[node name="Light2D" type="Light2D"]
-position = Vector2( 675, 309 )
+[node name="Torchlight" type="Light2D"]
+position = Vector2( 166, 0 )
 scale = Vector2( 0.647031, 0.609989 )
 texture = ExtResource( 1 )
 mode = 2
