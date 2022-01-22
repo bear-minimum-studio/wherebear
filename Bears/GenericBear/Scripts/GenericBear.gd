@@ -4,23 +4,6 @@ extends KinematicBody2D
 const WALK_SPEED := 70.0
 const ROULADE_SPEED := 140.0
 
-const POSSIBLE_ACTIONS := [
-	"Idle",
-	"Walk",
-	"Roulade"
-]
-
-const POSSIBLE_WALK_DIRECTIONS := [
-	Vector2.UP,
-	Vector2(0.7, 0.7),
-	Vector2.RIGHT,
-	Vector2(-0.7, 0.7),
-	Vector2.DOWN,
-	Vector2(-0.7, -0.7),
-	Vector2.LEFT,
-	Vector2(0.7, -0.7)
-]
-
 ###########
 # PRIVATE #
 ###########

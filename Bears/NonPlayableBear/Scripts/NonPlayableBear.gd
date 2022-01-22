@@ -1,5 +1,22 @@
 extends GenericBear
 
+const POSSIBLE_ACTIONS := [
+	"Idle",
+	"Walk",
+	"Roulade"
+]
+
+const POSSIBLE_WALK_DIRECTIONS := [
+	Vector2.UP,
+	Vector2(0.7, 0.7),
+	Vector2.RIGHT,
+	Vector2(-0.7, 0.7),
+	Vector2.DOWN,
+	Vector2(-0.7, -0.7),
+	Vector2.LEFT,
+	Vector2(0.7, -0.7)
+]
+
 const MAX_ACTION_TIME := 1.5
 const MIN_ACTION_TIME := 0.5
 
