@@ -1,24 +1,43 @@
 extends GenericBear
 
+const POSSIBLE_ACTIONS := [
+	"Idle",
+	"Walk",
+	"Roulade"
+]
+
+const POSSIBLE_WALK_DIRECTIONS := [
+	Vector2.UP,
+	Vector2(0.5, 0.5),
+	Vector2.RIGHT,
+	Vector2(-0.5, 0.5),
+	Vector2.DOWN,
+	Vector2(-0.5, -0.5),
+	Vector2.LEFT,
+	Vector2(0.5, -0.5)
+]
+
+const MAX_ACTION_TIME := 1.5
+const MIN_ACTION_TIME := 0.5
+
 export var _untransformed_sprite : Texture
 export var _transformed_sprite : Texture
+
+onready var _action_timer := $ActionTimer
 
 var contaminated := false
 var transformed := false
 
 func _ready() -> void:
 	randomize()
+	_start_action_timer()
 	_set_sprite(_untransformed_sprite)
 
 func _update_input_vector() -> void:
-	if(randf() < 0.05):
-		_input_vector.x = randf() - 0.5
-		_input_vector.y = randf() - 0.5
+	pass
 
 func _parse_inputs() -> void:
-	._parse_inputs()
-	if(randf() < 0.001):
-		_roulade()
+	pass
 
 func _update() -> void:
 	# TODO Implement real conditions
@@ -30,9 +49,9 @@ func _update() -> void:
 	if(get_position().y > 300):
 		contaminate()
 	if(get_position().x > 512):
-		transform()
+		metamorphose()
 	if(get_position().x < 512):
-		untransform()
+		unmetamorphose()
 
 
 func contaminate() -> void:
@@ -50,7 +69,7 @@ func heal() -> void:
 	Logger.debug('Healthy')
 
 
-func transform() -> void:
+func metamorphose() -> void:
 	if(transformed):
 		return
 	
@@ -59,10 +78,27 @@ func transform() -> void:
 		_set_sprite(_transformed_sprite)
 	Logger.debug('Transformed')
 
-func untransform() -> void:
+func unmetamorphose() -> void:
 	if(!transformed):
 		return
 	
 	transformed = false
 	_set_sprite(_untransformed_sprite)
 	Logger.debug('Untransformed')
+
+func _start_action_timer() -> void:
+	_action_timer.start(MIN_ACTION_TIME + randf() * (MAX_ACTION_TIME - MIN_ACTION_TIME))
+
+func _on_ActionTimer_timeout() -> void:
+	var action : String = POSSIBLE_ACTIONS[randi() % POSSIBLE_ACTIONS.size()]
+	match action:
+		"Idle":
+			_input_vector = Vector2.ZERO
+			_roulade = false
+		"Walk":
+			_input_vector = POSSIBLE_WALK_DIRECTIONS[randi() % POSSIBLE_WALK_DIRECTIONS.size()]
+			_roulade = false
+		"Roulade":
+			_input_vector = POSSIBLE_WALK_DIRECTIONS[randi() % POSSIBLE_WALK_DIRECTIONS.size()]
+			_roulade = true
+	_start_action_timer()

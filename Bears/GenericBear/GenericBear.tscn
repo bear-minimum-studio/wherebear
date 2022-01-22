@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBear.gd" type="Script" id=1]
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd" type="Script" id=2]
 [ext_resource path="res://Bears/NonPlayableBear/good_bear_v7.png" type="Texture" id=3]
-[ext_resource path="res://UI/Resources/diamant.png" type="Texture" id=4]
+[ext_resource path="res://Bears/GenericBear/Scripts/Idle.gd" type="Script" id=4]
+[ext_resource path="res://Bears/GenericBear/Scripts/Roulade.gd" type="Script" id=5]
+[ext_resource path="res://Utils/StateMachine/Scripts/StateMachine.gd" type="Script" id=6]
+[ext_resource path="res://Bears/GenericBear/Scripts/Walk.gd" type="Script" id=7]
+[ext_resource path="res://UI/Resources/diamant.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
@@ -26,4 +30,21 @@ shape = SubResource( 1 )
 material = SubResource( 2 )
 position = Vector2( 1, -82 )
 scale = Vector2( 1.625, 1.625 )
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
+
+[node name="MoveStateMachine" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Idle" type="Node" parent="MoveStateMachine"]
+script = ExtResource( 4 )
+
+[node name="Walk" type="Node" parent="MoveStateMachine"]
+script = ExtResource( 7 )
+
+[node name="Roulade" type="Node" parent="MoveStateMachine"]
+script = ExtResource( 5 )
+
+[node name="RouladeTimer" type="Timer" parent="MoveStateMachine/Roulade"]
+one_shot = true
+
+[connection signal="timeout" from="MoveStateMachine/Roulade/RouladeTimer" to="MoveStateMachine/Roulade" method="_on_RouladeTimer_timeout"]

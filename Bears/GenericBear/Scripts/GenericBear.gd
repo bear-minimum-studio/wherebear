@@ -1,16 +1,19 @@
 class_name GenericBear
 extends KinematicBody2D
 
-const MOOVEMENT_SPEED := 150.0
+const WALK_SPEED := 40.0
+const ROULADE_SPEED := 80.0
 
 ###########
 # PRIVATE #
 ###########
 
-onready var _sprite = $Sprite
+onready var _sprite := $Sprite
+onready var move_state_machine := $MoveStateMachine
 
 var _velocity := Vector2.ZERO
 var _input_vector := Vector2.ZERO
+var _roulade := false
 
 func _ready() -> void:
 	pass
@@ -31,18 +34,13 @@ func _update() -> void:
 	pass
 
 func _update_velocity() -> void:
-	_velocity = MOOVEMENT_SPEED * _input_vector
 	_velocity = move_and_slide(_velocity)
+	_sprite.set_orientation(_velocity)
 
 func _physics_process(_delta) -> void:
 	_parse_inputs()
 	_update_velocity()
-	_sprite.set_orientation(_velocity)
 	_update()
-
-func _roulade() -> void:
-	# TODO implement real roulade mekanixXxXXx
-	Logger.debug('Roulade')
 
 func _set_sprite(texture: Texture) -> void:
 	_sprite.set_texture(texture)
