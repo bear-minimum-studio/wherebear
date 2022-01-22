@@ -26,12 +26,14 @@ color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 [node name="InsideWalls" type="Node2D" parent="Walls"]
 
 [node name="Wall1" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 100, 300 )
 
 [node name="Wall2" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
 position = Vector2( 924, 300 )
 
 [node name="Wall3" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 512, 100 )
 rotation = 1.5708
 
