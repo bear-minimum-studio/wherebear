@@ -7,7 +7,7 @@
 [ext_resource path="res://Bears/WhereBear/WhereBear.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 518, 301.5 )
+extents = Vector2( 510, 298 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -113,7 +113,7 @@ rotation = 1.5708
 
 [node name="SpawnZoneShape" type="CollisionShape2D" parent="SpawnZone"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 508, 291.5 )
+position = Vector2( 512, 300 )
 shape = SubResource( 1 )
 
 [node name="SeekerBear" parent="." instance=ExtResource( 1 )]
