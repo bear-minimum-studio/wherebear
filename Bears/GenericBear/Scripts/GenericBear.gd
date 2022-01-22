@@ -34,10 +34,6 @@ func _update_input_vector() -> void:
 		_input_vector += Vector2.DOWN
 	
 	_input_vector = _input_vector.normalized()
-	
-	var torch_light_handle := $TorchLightHandle
-	if (torch_light_handle):
-		torch_light_handle.set_direction(_input_vector)
 
 # Virtual function to override
 # Used to handle all inputs/actions
