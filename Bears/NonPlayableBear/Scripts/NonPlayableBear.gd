@@ -17,7 +17,7 @@ func _update_input_vector() -> void:
 
 func _parse_inputs() -> void:
 	._parse_inputs()
-	if(randf() < 0.01):
+	if(randf() < 0.001):
 		_roulade()
 
 func _update() -> void:
