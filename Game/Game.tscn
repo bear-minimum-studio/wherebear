@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Bears/NonPlayableBear/NonPlayableBear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Wall/Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/DumbBackground.png" type="Texture" id=3]
 [ext_resource path="res://Game/Game.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 518, 301.5 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -105,5 +107,9 @@ rotation = 1.5708
 position = Vector2( 1034, 680 )
 rotation = 1.5708
 
-[node name="NonPlayableBear" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 300 )
+[node name="SpawnZone" type="Area2D" parent="."]
+
+[node name="SpawnZoneShape" type="CollisionShape2D" parent="SpawnZone"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 508, 291.5 )
+shape = SubResource( 1 )
