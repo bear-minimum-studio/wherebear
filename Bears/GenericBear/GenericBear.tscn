@@ -34,6 +34,7 @@ texture = ExtResource( 8 )
 
 [node name="MoveStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="MoveStateMachine"]
 script = ExtResource( 4 )
