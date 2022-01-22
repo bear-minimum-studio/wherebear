@@ -1,8 +1,8 @@
 class_name GenericBear
 extends KinematicBody2D
 
-const WALK_SPEED := 40.0
-const ROULADE_SPEED := 80.0
+const WALK_SPEED := 70.0
+const ROULADE_SPEED := 140.0
 
 ###########
 # PRIVATE #
@@ -30,17 +30,17 @@ func _parse_inputs() -> void:
 
 # Virtual function to override
 # Used to handle logic of the bear
-func _update() -> void:
+func _update(_delta) -> void:
 	pass
 
 func _update_velocity() -> void:
 	_velocity = move_and_slide(_velocity)
 	_sprite.set_orientation(_velocity)
 
-func _physics_process(_delta) -> void:
+func _physics_process(delta) -> void:
 	_parse_inputs()
 	_update_velocity()
-	_update()
+	_update(delta)
 
 func _set_sprite(texture: Texture) -> void:
 	_sprite.set_texture(texture)

@@ -26,7 +26,7 @@ export var _transformed_sprite : Texture
 onready var _action_timer := $ActionTimer
 
 var contaminated := false
-var transformed := false
+var metamorphosed := false
 
 func _ready() -> void:
 	randomize()
@@ -39,13 +39,13 @@ func _update_input_vector() -> void:
 func _parse_inputs() -> void:
 	pass
 
-func _update() -> void:
+func _update(_delta) -> void:
 	# TODO Implement real conditions
 	if(get_position().y < 50 || get_position().y > 550):
 		pass
 #		kill()
 	if(get_position().y < 300):
-		heal()
+		decontaminate()
 	if(get_position().y > 300):
 		contaminate()
 	if(get_position().x > 512):
@@ -61,30 +61,30 @@ func contaminate() -> void:
 	contaminated = true
 	Logger.debug('Contaminated')
 	
-func heal() -> void:
+func decontaminate() -> void:
 	if(!contaminated):
 		return
 	
 	contaminated = false
-	Logger.debug('Healthy')
+	Logger.debug('Decontaminated')
+	unmetamorphose()
 
 
 func metamorphose() -> void:
-	if(transformed):
+	if(metamorphosed || !contaminated):
 		return
-	
-	if(contaminated):
-		transformed = true
-		_set_sprite(_transformed_sprite)
-	Logger.debug('Transformed')
+		
+	metamorphosed = true
+	_set_sprite(_transformed_sprite)
+	Logger.debug('Metamorphosed')
 
 func unmetamorphose() -> void:
-	if(!transformed):
+	if(!metamorphosed):
 		return
 	
-	transformed = false
+	metamorphosed = false
 	_set_sprite(_untransformed_sprite)
-	Logger.debug('Untransformed')
+	Logger.debug('Unmetamorphosed')
 
 func _start_action_timer() -> void:
 	_action_timer.start(MIN_ACTION_TIME + randf() * (MAX_ACTION_TIME - MIN_ACTION_TIME))
