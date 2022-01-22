@@ -80,7 +80,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Events="*res://Game/Events.gd"
+Events="*res://World/Events.gd"
 
 [input]
 
