@@ -1,6 +1,6 @@
 extends Node2D
 
-const NUMBER_OF_BEARS = 20
+const NUMBER_OF_BEARS = 3
 
 onready var spawn_zone_area = $SpawnZone/SpawnZoneShape
 onready var spawn_zone = $SpawnZone
