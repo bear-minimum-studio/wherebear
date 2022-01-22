@@ -25,6 +25,11 @@ func _update_input_vector() -> void:
 func _parse_inputs() -> void:
 	_update_input_vector()
 
+# Virtual function to override
+# Used to handle logic of the bear
+func _update() -> void:
+	pass
+
 func _update_velocity() -> void:
 	_velocity = MOOVEMENT_SPEED * _input_vector
 	_velocity = move_and_slide(_velocity)
@@ -34,6 +39,7 @@ func _physics_process(_delta) -> void:
 	_update_velocity()
 	
 	_sprite.set_orientation(_velocity.x)
+	_update()
 
 func _roulade() -> void:
 	# TODO implement real roulade mekanixXxXXx
