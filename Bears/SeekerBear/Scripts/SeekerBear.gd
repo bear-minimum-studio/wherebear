@@ -6,6 +6,9 @@ onready var _torch_light_handle := $TorchLightHandle
 func _ready() -> void:
 	player_id = 0
 
+	Events.connect("day_starts", self, "_on_day_start")
+	Events.connect("night_starts", self, "_on_night_start")
+
 func _update(_delta) -> void:
 	if (_torch_light_handle):
 		_torch_light_handle.set_direction(_input_vector)
@@ -24,3 +27,9 @@ func _catch() -> void:
 		if(overlapping_area is HurtBox && overlapping_area.owner is WhereBear):
 			overlapping_area.owner.catch()
 			break
+
+func _on_day_start():
+	_torch_light_handle.visible = false
+
+func _on_night_start():
+	_torch_light_handle.visible = true

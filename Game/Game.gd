@@ -9,6 +9,8 @@ onready var canvas_modulate = $CanvasModulate
 var non_playable_bear_scene = preload("res://Bears/NonPlayableBear/NonPlayableBear.tscn")
 
 func _ready():
+	Events.emit_signal("day_starts")
+
 	randomize()
 
 	var square_extents = spawn_zone_area.shape.extents
@@ -34,8 +36,8 @@ func trigger_day():
 	canvas_modulate.visible = false
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("debug_1"):
 		trigger_night()
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("debug_2"):
 		trigger_day()
 	pass
