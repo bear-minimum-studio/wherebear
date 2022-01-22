@@ -1,3 +1,4 @@
+class_name GenericBearSprite
 extends Sprite
 
 const ORIENTATION_SWAP_THRESHOLD := 5.0

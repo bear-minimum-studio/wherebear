@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "GenericBear",
+"language": "GDScript",
+"path": "res://Bears/GenericBear/Scripts/GenericBear.gd"
+}, {
+"base": "Reference",
+"class": "GenericBearSprite",
+"language": "GDScript",
+"path": "res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://Utils/StateMachine/State/Scripts/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Utils/StateMachine/Scripts/StateMachine.gd"
+} ]
+_global_script_class_icons={
+"GenericBear": "",
+"GenericBearSprite": "",
+"State": "",
+"StateMachine": ""
+}
+
 [application]
 
 config/name="Wherebear"
