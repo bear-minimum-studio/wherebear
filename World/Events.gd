@@ -9,3 +9,6 @@ signal day_starts
 signal dawn_ends
 # warning-ignore:unused_signal
 signal dusk_starts
+
+#######
+signal good_bear_bitten

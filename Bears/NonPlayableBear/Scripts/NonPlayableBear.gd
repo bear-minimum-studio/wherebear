@@ -57,6 +57,7 @@ func contaminate() -> void:
 		return
 	
 	contaminated = true
+	Events.emit_signal("good_bear_bitten")
 	Logger.debug('Contaminated')
 	metamorphose()
 
