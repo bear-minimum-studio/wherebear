@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBear.gd" type="Script" id=1]
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://UI/Resources/diamant.png" type="Texture" id=8]
 [ext_resource path="res://Bears/GenericBear/Scripts/HurtBox.gd" type="Script" id=9]
 [ext_resource path="res://Bears/GenericBear/Scripts/HitBox.gd" type="Script" id=10]
+[ext_resource path="res://Bears/WhereBear/Resources/man_bear_frwrd_run.png" type="Texture" id=11]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -46,36 +47,12 @@ shader_param/u_replacement_color_2 = Color( 0.341176, 0.301961, 1, 1 )
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0.00122589 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -87,36 +64,12 @@ resource_name = "RESET"
 length = 0.001
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0.00122589 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -128,36 +81,12 @@ resource_name = "Walk"
 length = 0.9
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
@@ -175,6 +104,7 @@ light_mode = 1
 [node name="GenericBear" type="KinematicBody2D"]
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 1 )
+_metamorphosed_sprite = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 8 )

@@ -14,6 +14,9 @@ onready var hit_box := $HitBox
 onready var move_state_machine := $MoveStateMachine
 onready var animation_player := $AnimationPlayer
 
+export var _unmetamorphosed_sprite : Texture
+export var _metamorphosed_sprite : Texture
+
 var _velocity := Vector2.ZERO
 var _input_vector := Vector2.ZERO
 var _roulade := false
@@ -86,7 +89,7 @@ func metamorphose() -> void:
 		return
 		
 	metamorphosed = true
-	_sprite.set_modulate(Color(0, 1, 0))
+	_sprite.set_texture(_metamorphosed_sprite)
 	Logger.debug('Metamorphosed')
 
 func unmetamorphose() -> void:
@@ -94,5 +97,5 @@ func unmetamorphose() -> void:
 		return
 	
 	metamorphosed = false
-	_sprite.set_modulate(Color(1, 1, 1))
+	_sprite.set_texture(_unmetamorphosed_sprite)
 	Logger.debug('Unmetamorphosed')
