@@ -93,15 +93,16 @@ tracks/0/keys = {
 "values": [ 1, 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25, 25 )
-
 [sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 1
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25, 12.9241 )
 
 [sub_resource type="CircleShape2D" id=4]
 
 [node name="GenericBear" type="KinematicBody2D"]
+position = Vector2( 0, -39 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 1 )
 _metamorphosed_sprite = ExtResource( 11 )
@@ -117,18 +118,15 @@ anims/Idle = SubResource( 3 )
 anims/RESET = SubResource( 6 )
 anims/Walk = SubResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
 [node name="Diamant" type="Sprite" parent="."]
 material = SubResource( 2 )
 position = Vector2( 1, -82 )
 scale = Vector2( 1.625, 1.625 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 53 )
-scale = Vector2( 1.35, 0.5 )
+[node name="CollisionShape2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 50.0669 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="HitBox" type="Area2D" parent="."]
