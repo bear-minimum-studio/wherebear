@@ -6,7 +6,9 @@ onready var _torch_light_handle := $TorchLightHandle
 func _ready() -> void:
 	player_id = 0
 	_torch_light_handle.set_visible(false)
+	# warning-ignore:return_value_discarded
 	Events.connect("dawn_ends", self, "_switch_off_torch_light_handle")
+	# warning-ignore:return_value_discarded
 	Events.connect("dusk_starts", self, "_switch_on_torch_light_handle")
 
 func _update(_delta) -> void:

@@ -26,7 +26,9 @@ var contaminated := false
 var metamorphosed := false
 
 func _ready() -> void:
+	# warning-ignore:return_value_discarded
 	Events.connect("day_starts", self, "_on_day_starts")
+	# warning-ignore:return_value_discarded
 	Events.connect("day_ends", self, "_on_day_ends")
 
 # Virtual function to override
