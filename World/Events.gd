@@ -21,3 +21,5 @@ signal wherebear_caught
 signal non_playable_bear_contaminated
 # warning-ignore:unused_signal
 signal round_ended
+# warning-ignore:unused_signal
+signal seekerbear_talked

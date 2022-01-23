@@ -8,6 +8,7 @@ func _ready() -> void:
 	_torch_light_handle.set_visible(false)
 	WALK_SPEED = 100.0
 	ROULADE_SPEED = 200.0
+	DIALOG_TEXTS = ["What's up bears"]
 	# warning-ignore:return_value_discarded
 	Events.connect("dawn_ends", self, "_switch_off_torch_light_handle")
 	# warning-ignore:return_value_discarded
@@ -24,6 +25,8 @@ func _parse_inputs() -> void:
 	._parse_inputs()
 	if(Input.is_action_just_pressed("p%d_primary_action" % player_id)):
 		_catch()
+	if(Input.is_action_just_pressed("p%d_secondary_action" % player_id)):
+		_talk()
 
 func _catch() -> void:
 	var overlapping_areas = hit_box.get_overlapping_areas()
@@ -74,6 +77,9 @@ func _switch_off_torch_light_handle() -> void:
 func _switch_on_torch_light_handle() -> void:
 	_torch_light_handle.set_visible(true)
 
+func _talk():
+	._talk()
+	Events.emit_signal("seekerbear_talked")
 
 func metamorphose() -> void:
 	pass

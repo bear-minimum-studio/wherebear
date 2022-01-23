@@ -1,8 +1,20 @@
 class_name GenericBear
 extends KinematicBody2D
 
+const MIN_TALK_REACTION_TIME := 0.05
+const MAX_TALK_REACTION_TIME := 1.25
 var WALK_SPEED := 70.0
 var ROULADE_SPEED := 140.0
+var DIALOG_TEXTS := [
+	"Graou",
+	"Coucou",
+	"Youpi",
+	"Hahaha",
+	"Chouette",
+	"Grompf",
+	"Grrrrr",
+	"Roar"
+]
 
 ###########
 # PRIVATE #
@@ -13,6 +25,7 @@ onready var hurt_box := $HurtBox
 onready var hit_box := $HitBox
 onready var move_state_machine := $MoveStateMachine
 onready var animation_player := $AnimationPlayer
+onready var dialog_displayer := $DialogDisplayer
 
 export var _unmetamorphosed_sprite : Texture
 export var _metamorphosed_sprite : Texture
@@ -62,6 +75,8 @@ func _parse_inputs() -> void:
 # Virtual function to override
 # Used to handle logic of the bear
 func _update(_delta) -> void:
+	if Input.is_action_just_pressed("debug_2"):
+		_talk()
 	pass
 
 func _update_velocity() -> void:
@@ -80,6 +95,10 @@ func _on_day_starts() -> void:
 func _on_day_ends() -> void:
 	_is_day = false
 	metamorphose()
+
+func _talk() -> void:
+	var picked_text = DIALOG_TEXTS[randi() % DIALOG_TEXTS.size()]
+	dialog_displayer.display_text(picked_text, 4.0)
 
 ##########
 # PUBLIC #
@@ -106,3 +125,4 @@ func unmetamorphose() -> void:
 	metamorphosed = false
 	_sprite.set_texture(_unmetamorphosed_sprite)
 	Logger.debug('Unmetamorphosed')
+

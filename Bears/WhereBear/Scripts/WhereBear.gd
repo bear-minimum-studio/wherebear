@@ -12,6 +12,8 @@ func _parse_inputs() -> void:
 	._parse_inputs()
 	if(Input.is_action_just_pressed("p%d_primary_action" % player_id)):
 		_bite()
+	if(Input.is_action_just_pressed("p%d_secondary_action" % player_id)):
+		_talk()
 
 func _bite() -> void:
 	if(!metamorphosed):

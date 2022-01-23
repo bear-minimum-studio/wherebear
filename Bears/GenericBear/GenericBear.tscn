@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBear.gd" type="Script" id=1]
 [ext_resource path="res://Bears/GenericBear/Scripts/GenericBearSpriteSprite.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Bears/GenericBear/Scripts/HurtBox.gd" type="Script" id=9]
 [ext_resource path="res://Bears/GenericBear/Scripts/HitBox.gd" type="Script" id=10]
 [ext_resource path="res://Bears/WhereBear/Resources/man_bear_frwrd_run.png" type="Texture" id=11]
+[ext_resource path="res://UI/theme.tres" type="Theme" id=12]
+[ext_resource path="res://Bears/GenericBear/DialogDisplayer.gd" type="Script" id=13]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -118,6 +120,24 @@ anims/Idle = SubResource( 3 )
 anims/RESET = SubResource( 6 )
 anims/Walk = SubResource( 5 )
 
+[node name="DialogDisplayer" type="Label" parent="."]
+visible = false
+margin_left = -227.143
+margin_top = -490.0
+margin_right = 228.857
+margin_bottom = -108.0
+theme = ExtResource( 12 )
+align = 1
+valign = 2
+autowrap = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogTimer" type="Timer" parent="DialogDisplayer"]
+one_shot = true
+
 [node name="Diamant" type="Sprite" parent="."]
 material = SubResource( 2 )
 position = Vector2( 1, -82 )
@@ -126,7 +146,6 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 50 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -166,5 +185,6 @@ one_shot = true
 [node name="RouladeCooldownTimer" type="Timer" parent="MoveStateMachine/Roulade"]
 one_shot = true
 
+[connection signal="timeout" from="DialogDisplayer/DialogTimer" to="DialogDisplayer" method="_on_DialogTimer_timeout"]
 [connection signal="timeout" from="MoveStateMachine/Roulade/RouladeDurationTimer" to="MoveStateMachine/Roulade" method="_on_RouladeDurationTimer_timeout"]
 [connection signal="timeout" from="MoveStateMachine/Roulade/RouladeCooldownTimer" to="MoveStateMachine/Roulade" method="_on_RouladeCooldownTimer_timeout"]

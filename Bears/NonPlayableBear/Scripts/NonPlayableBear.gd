@@ -37,8 +37,12 @@ const POSSIBLE_ACTIONS := [
 ]
 
 onready var _action_timer := $ActionTimer
+onready var _talk_reaction_timer := $TalkReactionTimer
 
 func _ready() -> void:
+	# warning-ignore:return_value_discarded
+	Events.connect("seekerbear_talked", self, "_start_talk_reaction")
+	
 	randomize()
 	_on_ActionTimer_timeout()
 
@@ -56,6 +60,13 @@ func _on_ActionTimer_timeout() -> void:
 	_input_vector = action.possible_directions[randi() % action.possible_directions.size()]
 	_roulade = action.roulade
 	_start_action_timer(action.min_duration, action.max_duration)
+	
+func _on_TalkReactionTimer_timeout():
+	_talk()
+
+func _start_talk_reaction() -> void:
+	var reaction_time = MIN_TALK_REACTION_TIME + randf() * MAX_TALK_REACTION_TIME
+	_talk_reaction_timer.start(reaction_time)
 
 func catch() -> void:
 	if(contaminated):
