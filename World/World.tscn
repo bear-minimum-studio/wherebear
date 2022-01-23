@@ -46,93 +46,25 @@ visible = false
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="InsideWalls" type="Node2D" parent="Walls"]
-
-[node name="Wall1" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 100, 300 )
-
-[node name="Wall2" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 924, 300 )
-
-[node name="Wall3" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 512, 100 )
-rotation = 1.5708
-
-[node name="Wall4" parent="Walls/InsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 512, 500 )
-rotation = 1.5708
-
 [node name="OutsideWalls" type="Node2D" parent="Walls"]
 
 [node name="Wall1" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 100, -10 )
-
-[node name="Wall2" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 300, -10 )
+position = Vector2( 586, -223 )
+scale = Vector2( 11.12, 1 )
 
 [node name="Wall3" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 500, -10 )
+position = Vector2( 586, 965 )
+scale = Vector2( 11.12, 1 )
+
+[node name="Wall2" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
+position = Vector2( 1569, 490 )
+rotation = -1.57079
+scale = Vector2( 11.12, 1 )
 
 [node name="Wall4" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 700, -10 )
-
-[node name="Wall5" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 900, -10 )
-
-[node name="Wall6" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1100, -10 )
-
-[node name="Wall7" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 100, 610 )
-
-[node name="Wall8" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 300, 610 )
-
-[node name="Wall9" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 500, 610 )
-
-[node name="Wall10" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 700, 610 )
-
-[node name="Wall11" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 900, 610 )
-
-[node name="Wall12" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1100, 610 )
-
-[node name="Wall13" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( -10, 80 )
-rotation = 1.5708
-
-[node name="Wall14" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( -10, 280 )
-rotation = 1.5708
-
-[node name="Wall15" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( -10, 480 )
-rotation = 1.5708
-
-[node name="Wall16" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( -10, 680 )
-rotation = 1.5708
-
-[node name="Wall17" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1034, 80 )
-rotation = 1.5708
-
-[node name="Wall18" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1034, 280 )
-rotation = 1.5708
-
-[node name="Wall19" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1034, 480 )
-rotation = 1.5708
-
-[node name="Wall20" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1034, 680 )
-rotation = 1.5708
+position = Vector2( -477, 488 )
+rotation = -1.57079
+scale = Vector2( 11.12, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 550, 370 )
