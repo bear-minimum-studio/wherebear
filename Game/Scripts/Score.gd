@@ -28,7 +28,7 @@ func _on_uncontaminated_non_playable_bear_caught() -> void:
 	print_score()
 
 func _on_wherebear_caught() -> void:
-	Events.emit_signal("round_ended")
+	Events.emit_signal("round_ended", _score)
 	Logger.debug("ROUND ENDED")
 	print_score()
 
