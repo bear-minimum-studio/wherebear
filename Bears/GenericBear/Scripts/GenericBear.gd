@@ -19,7 +19,6 @@ var _input_vector := Vector2.ZERO
 var _roulade := false
 var player_id := -1
 
-
 # Virtual function to override
 # Used to get direction of movement
 func _update_input_vector() -> void:
