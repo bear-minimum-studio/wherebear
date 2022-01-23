@@ -24,5 +24,6 @@ func _bite() -> void:
 			break
 
 func catch() -> void:
+	Events.emit_signal("wherebear_caught")
 	Logger.debug("Caught")
 	kill()

@@ -53,9 +53,11 @@ func _on_ActionTimer_timeout() -> void:
 
 func catch() -> void:
 	if(contaminated):
+		Events.emit_signal("contaminated_non_playable_bear_caught")
 		Logger.debug("Caught")
 		kill()
 	else:
+		Events.emit_signal("uncontaminated_non_playable_bear_caught")
 		Logger.debug("Catch fail")
 
 func contaminate() -> void:
@@ -63,7 +65,7 @@ func contaminate() -> void:
 		return
 	
 	contaminated = true
-	Events.emit_signal("good_bear_bitten")
+	Events.emit_signal("non_playable_bear_contaminated")
 	Logger.debug('Contaminated')
 	metamorphose()
 
