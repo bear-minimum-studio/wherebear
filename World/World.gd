@@ -41,6 +41,7 @@ onready var spawn_zone_area = $SpawnZone/SpawnZoneShape
 onready var spawn_zone = $SpawnZone
 onready var canvas_modulate = $CanvasModulate
 onready var day_cycle_tween = $CanvasModulate/DayCycleTween
+onready var characters_container = $CharactersContainer
 
 var non_playable_bear_scene = preload("res://Bears/NonPlayableBear/NonPlayableBear.tscn")
 
@@ -66,7 +67,7 @@ func _ready():
 		var new_bear = non_playable_bear_scene.instance()
 		new_bear.position.x = x + spawn_zone_top_left_absolute_coordinates_x
 		new_bear.position.y = y + spawn_zone_top_left_absolute_coordinates_y
-		self.add_child(new_bear)
+		characters_container.add_child(new_bear)
 
 func _fade_light(to_color: Color, duration: float) -> void:
 	day_cycle_tween.interpolate_property(canvas_modulate, "color",

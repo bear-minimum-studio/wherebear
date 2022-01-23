@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 926.5, 518 )
 
-[node name="World" type="YSort"]
+[node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Dalles" type="TileMap" parent="."]
@@ -127,15 +127,17 @@ rotation = 1.5708
 position = Vector2( 1034, 680 )
 rotation = 1.5708
 
-[node name="SeekerBear" parent="." instance=ExtResource( 1 )]
-position = Vector2( 606, 312 )
-
-[node name="WhereBear" parent="." instance=ExtResource( 3 )]
-position = Vector2( 315, 370 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 550, 370 )
 current = true
 zoom = Vector2( 2, 2 )
+
+[node name="CharactersContainer" type="YSort" parent="."]
+
+[node name="SeekerBear" parent="CharactersContainer" instance=ExtResource( 1 )]
+position = Vector2( 606, 312 )
+
+[node name="WhereBear" parent="CharactersContainer" instance=ExtResource( 3 )]
+position = Vector2( 315, 370 )
 
 [connection signal="tween_completed" from="CanvasModulate/DayCycleTween" to="." method="_on_DayCycleTween_tween_completed"]
