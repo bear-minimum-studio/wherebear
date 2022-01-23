@@ -5,9 +5,8 @@ onready var _torch_light_handle := $TorchLightHandle
 
 func _ready() -> void:
 	player_id = 0
-
-	Events.connect("day_starts", self, "_on_day_start")
-	Events.connect("night_starts", self, "_on_night_start")
+	Events.connect("dawn_ends", self, "_switch_off_torch_light_handle")
+	Events.connect("dusk_starts", self, "_switch_on_torch_light_handle")
 
 func _update(_delta) -> void:
 	if (_torch_light_handle):
@@ -28,8 +27,8 @@ func _catch() -> void:
 			overlapping_area.owner.catch()
 			break
 
-func _on_day_start():
-	_torch_light_handle.visible = false
+func _switch_off_torch_light_handle() -> void:
+	_torch_light_handle.set_visible(false)
 
-func _on_night_start():
-	_torch_light_handle.visible = true
+func _switch_on_torch_light_handle() -> void:
+	_torch_light_handle.set_visible(true)

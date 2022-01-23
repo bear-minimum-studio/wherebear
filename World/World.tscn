@@ -26,7 +26,8 @@ tile_data = PoolIntArray( -65537, 0, 589827, -131072, 0, 131074, -131071, 0, 131
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color( 0, 0, 0, 1 )
+
+[node name="DayCycleTween" type="Tween" parent="CanvasModulate"]
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -130,3 +131,5 @@ position = Vector2( 606, 312 )
 
 [node name="WhereBear" parent="." instance=ExtResource( 3 )]
 position = Vector2( 315, 370 )
+
+[connection signal="tween_completed" from="CanvasModulate/DayCycleTween" to="." method="_on_DayCycleTween_tween_completed"]
