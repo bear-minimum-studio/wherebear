@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://World/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/theme.tres" type="Theme" id=2]
+[ext_resource path="res://UI/font_smaller.tres" type="DynamicFont" id=3]
 
 [node name="Game" type="Node2D"]
 
@@ -10,9 +11,75 @@
 [node name="UICanvas" type="CanvasLayer" parent="."]
 
 [node name="UIRoot" type="Control" parent="UICanvas"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="UICanvas/UIRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UICanvas/UIRoot/MarginContainer"]
+margin_right = 896.0
+margin_bottom = 472.0
+
+[node name="Title" type="Label" parent="UICanvas/UIRoot/MarginContainer/VBoxContainer"]
+margin_right = 896.0
+margin_bottom = 32.0
+text = "It's night!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UICanvas/UIRoot/MarginContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 896.0
+margin_bottom = 472.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 32
+
+[node name="Hint" type="Label" parent="UICanvas/UIRoot/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 432.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "WEREBEAR
+
+bite as many bears as you can!"
+align = 1
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint2" type="Label" parent="UICanvas/UIRoot/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 464.0
+margin_right = 896.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "SCIENTIST
+
+catch the werebear, cure the bears!"
+align = 1
+valign = 2
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
