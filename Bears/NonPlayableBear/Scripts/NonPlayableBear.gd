@@ -1,13 +1,7 @@
 class_name NonPlayableBear
 extends GenericBear
 
-const POSSIBLE_ACTIONS := [
-	"Idle",
-	"Walk",
-	"Roulade"
-]
-
-const POSSIBLE_WALK_DIRECTIONS := [
+const POSSIBLE_DIRECTIONS := [
 	Vector2.UP,
 	Vector2(0.7, 0.7),
 	Vector2.RIGHT,
@@ -18,14 +12,35 @@ const POSSIBLE_WALK_DIRECTIONS := [
 	Vector2(0.7, -0.7)
 ]
 
-const MAX_ACTION_TIME := 1.5
-const MIN_ACTION_TIME := 0.5
+const POSSIBLE_ACTIONS := [
+	{
+		"name" : "Idle",
+		"possible_directions": [Vector2.ZERO],
+		"min_duration": 3.0,
+		"max_duration": 6.0,
+		"roulade": false
+	},
+	{
+		"name" : "Walk",
+		"possible_directions": POSSIBLE_DIRECTIONS,
+		"min_duration": 0.5,
+		"max_duration": 3.0,
+		"roulade": false
+	},
+	{
+		"name" : "Roulade",
+		"possible_directions": POSSIBLE_DIRECTIONS,
+		"min_duration": 1.0,
+		"max_duration": 1.0,
+		"roulade": true
+	}
+]
 
 onready var _action_timer := $ActionTimer
 
 func _ready() -> void:
 	randomize()
-	_start_action_timer()
+	_on_ActionTimer_timeout()
 
 func _update_input_vector() -> void:
 	pass
@@ -33,23 +48,14 @@ func _update_input_vector() -> void:
 func _parse_inputs() -> void:
 	pass
 
-
-func _start_action_timer() -> void:
-	_action_timer.start(MIN_ACTION_TIME + randf() * (MAX_ACTION_TIME - MIN_ACTION_TIME))
+func _start_action_timer(min_duration: float, max_duration: float) -> void:
+	_action_timer.start(min_duration + randf() * (max_duration - min_duration))
 
 func _on_ActionTimer_timeout() -> void:
-	var action : String = POSSIBLE_ACTIONS[randi() % POSSIBLE_ACTIONS.size()]
-	match action:
-		"Idle":
-			_input_vector = Vector2.ZERO
-			_roulade = false
-		"Walk":
-			_input_vector = POSSIBLE_WALK_DIRECTIONS[randi() % POSSIBLE_WALK_DIRECTIONS.size()]
-			_roulade = false
-		"Roulade":
-			_input_vector = POSSIBLE_WALK_DIRECTIONS[randi() % POSSIBLE_WALK_DIRECTIONS.size()]
-			_roulade = true
-	_start_action_timer()
+	var action = POSSIBLE_ACTIONS[randi() % POSSIBLE_ACTIONS.size()]
+	_input_vector = action.possible_directions[randi() % action.possible_directions.size()]
+	_roulade = action.roulade
+	_start_action_timer(action.min_duration, action.max_duration)
 
 func catch() -> void:
 	if(contaminated):

@@ -12,11 +12,10 @@ _unmetamorphosed_sprite = ExtResource( 3 )
 [node name="Sprite" parent="." index="0"]
 script = ExtResource( 9 )
 
-[node name="CollisionShape" parent="." index="2"]
-position = Vector2( 0, 0 )
-scale = Vector2( 1, 1 )
-
 [node name="ActionTimer" type="Timer" parent="." index="3"]
 one_shot = true
+
+[node name="CollisionShape" parent="." index="4"]
+position = Vector2( 0, 0 )
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]
