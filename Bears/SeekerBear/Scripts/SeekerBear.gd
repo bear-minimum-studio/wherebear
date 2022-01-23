@@ -6,6 +6,8 @@ onready var _torch_light_handle := $TorchLightHandle
 func _ready() -> void:
 	player_id = 0
 	_torch_light_handle.set_visible(false)
+	WALK_SPEED = 100.0
+	ROULADE_SPEED = 200.0
 	# warning-ignore:return_value_discarded
 	Events.connect("dawn_ends", self, "_switch_off_torch_light_handle")
 	# warning-ignore:return_value_discarded

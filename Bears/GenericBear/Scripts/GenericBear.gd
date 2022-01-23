@@ -1,8 +1,8 @@
 class_name GenericBear
 extends KinematicBody2D
 
-const WALK_SPEED := 70.0
-const ROULADE_SPEED := 140.0
+var WALK_SPEED := 70.0
+var ROULADE_SPEED := 140.0
 
 ###########
 # PRIVATE #
@@ -20,6 +20,7 @@ export var _metamorphosed_sprite : Texture
 var _velocity := Vector2.ZERO
 var _input_vector := Vector2.ZERO
 var _roulade := false
+var _is_day := true
 var player_id := -1
 
 var contaminated := false
@@ -73,9 +74,11 @@ func _physics_process(delta) -> void:
 	_update(delta)
 
 func _on_day_starts() -> void:
+	_is_day = true
 	unmetamorphose()
 
 func _on_day_ends() -> void:
+	_is_day = false
 	metamorphose()
 
 ##########
@@ -89,7 +92,7 @@ func catch() -> void:
 	pass
 
 func metamorphose() -> void:
-	if(metamorphosed || !contaminated):
+	if(metamorphosed || !contaminated || _is_day):
 		return
 		
 	metamorphosed = true

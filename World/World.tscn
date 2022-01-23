@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Bears/SeekerBear/SeekerBear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environment/Wall/Wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Bears/WhereBear/WhereBear.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/World.gd" type="Script" id=4]
 [ext_resource path="res://Environment/TileSet.tres" type="TileSet" id=5]
 
@@ -72,11 +70,5 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="CharactersContainer" type="YSort" parent="."]
-
-[node name="SeekerBear" parent="CharactersContainer" instance=ExtResource( 1 )]
-position = Vector2( 606, 312 )
-
-[node name="WhereBear" parent="CharactersContainer" instance=ExtResource( 3 )]
-position = Vector2( 315, 370 )
 
 [connection signal="tween_completed" from="CanvasModulate/DayCycleTween" to="." method="_on_DayCycleTween_tween_completed"]
