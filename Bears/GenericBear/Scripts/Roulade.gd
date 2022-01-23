@@ -1,13 +1,11 @@
 # Roulade.gd
 extends State
 
-const ROULADE_DURATION := 0.3
+const ROULADE_DURATION := 0.7
 const ROULADE_COOLDOWN := 1.0
 
 onready var _roulade_duration_timer := $RouladeDurationTimer
 onready var _roulade_cooldown_timer := $RouladeCooldownTimer
-
-onready var _owner_orignal_scale : Vector2 = owner.get_scale()
 
 var _roulade_direction := Vector2.ZERO
 var _roulade_on_cooldown := false
@@ -20,13 +18,10 @@ func enter(_msg := {}) -> void:
 	_roulade_on_cooldown = true
 	_roulade_duration_timer.start(ROULADE_DURATION)
 	_update_roulade_vector()
-	owner.set_scale(Vector2(1.0, 0.5))
+	owner.animation_player.play("Roll")
 
 func physics_update(_delta: float) -> void:
 	owner._velocity = owner.ROULADE_SPEED * _roulade_direction
-
-func exit() -> void:
-	owner.set_scale(_owner_orignal_scale)
 
 func _update_roulade_vector() ->  void:
 	if(owner._input_vector != Vector2.ZERO):

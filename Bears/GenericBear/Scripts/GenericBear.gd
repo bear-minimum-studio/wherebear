@@ -4,7 +4,7 @@ extends KinematicBody2D
 const MIN_TALK_REACTION_TIME := 0.05
 const MAX_TALK_REACTION_TIME := 1.25
 var WALK_SPEED := 70.0
-var ROULADE_SPEED := 140.0
+var ROULADE_SPEED := 180.0
 var DIALOG_TEXTS := [
 	"Graou",
 	"Coucou",
