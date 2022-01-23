@@ -50,3 +50,20 @@ func _on_ActionTimer_timeout() -> void:
 			_input_vector = POSSIBLE_WALK_DIRECTIONS[randi() % POSSIBLE_WALK_DIRECTIONS.size()]
 			_roulade = true
 	_start_action_timer()
+
+
+func contaminate() -> void:
+	if(contaminated):
+		return
+	
+	contaminated = true
+	Logger.debug('Contaminated')
+	metamorphose()
+
+func decontaminate() -> void:
+	if(!contaminated):
+		return
+	
+	contaminated = false
+	Logger.debug('Decontaminated')
+	unmetamorphose()

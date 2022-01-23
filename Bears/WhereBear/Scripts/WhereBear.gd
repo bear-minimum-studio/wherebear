@@ -3,7 +3,8 @@ extends GenericBear
 
 func _ready() -> void:
 	player_id = 1
-	contaminate()
+	contaminated = true
+	metamorphose()
 
 # Virtual function to override
 # Used to handle all inputs/actions
@@ -24,6 +25,4 @@ func _bite() -> void:
 
 func catch() -> void:
 	Logger.debug("Caught")
-
-func decontaminate() -> void:
-	pass
+	kill()

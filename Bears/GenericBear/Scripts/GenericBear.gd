@@ -80,22 +80,6 @@ func _on_day_ends() -> void:
 func kill() -> void:
 	queue_free()
 
-func contaminate() -> void:
-	if(contaminated):
-		return
-	
-	contaminated = true
-	metamorphose()
-	Logger.debug('Contaminated')
-	
-func decontaminate() -> void:
-	if(!contaminated):
-		return
-	
-	contaminated = false
-	Logger.debug('Decontaminated')
-	unmetamorphose()
-
 
 func metamorphose() -> void:
 	if(metamorphosed || !contaminated):
