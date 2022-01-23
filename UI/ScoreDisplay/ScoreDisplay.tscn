@@ -33,14 +33,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DoctorScoreLabel" type="Label" parent="VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 margin_top = 290.0
 margin_right = 1024.0
 margin_bottom = 310.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 2 )
-text = "Doctor score"
+text = "Werebear score"
 align = 1
 valign = 1
 autowrap = true
