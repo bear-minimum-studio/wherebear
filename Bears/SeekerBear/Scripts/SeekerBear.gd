@@ -25,10 +25,46 @@ func _parse_inputs() -> void:
 
 func _catch() -> void:
 	var overlapping_areas = hit_box.get_overlapping_areas()
-	for overlapping_area in overlapping_areas:
-		if(overlapping_area is HurtBox && overlapping_area.owner is WhereBear):
-			overlapping_area.owner.catch()
-			break
+	if overlapping_areas == null || overlapping_areas.size() < 1:
+		return
+	overlapping_areas.sort_custom(self, "_catch_compare")
+	var overlapping_area = overlapping_areas.pop_front()
+	if overlapping_area is HurtBox:
+		overlapping_area.owner.catch()
+
+func _catch_compare(a : Area2D, b : Area2D) -> bool:
+	var keep_a := true
+	var keep_b := false
+	
+	# If one is not a HurtBox keep the other
+	# If both are not keep a
+	if !(b is HurtBox):
+		return keep_a
+	if !(a is HurtBox):
+		return keep_b
+	
+	# If one is the WhereBear keep it
+	# If both are keep a
+	if (a.owner is WhereBear):
+		return keep_a
+	if (b.owner is WhereBear):
+		return keep_b
+	
+	# If one is the SeekerBear keep the other
+	# If both are keep a
+	if (b.owner == self):
+		return keep_a
+	if (a.owner == self):
+		return keep_b
+	
+	# If one is contaminated keep it
+	# If both are keep a
+	if (a.owner.contaminated):
+		return keep_a
+	if (b.owner.contaminated):
+		return keep_b
+		
+	return keep_a
 
 func _switch_off_torch_light_handle() -> void:
 	_torch_light_handle.set_visible(false)

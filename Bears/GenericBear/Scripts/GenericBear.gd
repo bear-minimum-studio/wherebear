@@ -85,6 +85,8 @@ func _on_day_ends() -> void:
 func kill() -> void:
 	queue_free()
 
+func catch() -> void:
+	pass
 
 func metamorphose() -> void:
 	if(metamorphosed || !contaminated):

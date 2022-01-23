@@ -51,6 +51,12 @@ func _on_ActionTimer_timeout() -> void:
 			_roulade = true
 	_start_action_timer()
 
+func catch() -> void:
+	if(contaminated):
+		Logger.debug("Caught")
+		kill()
+	else:
+		Logger.debug("Catch fail")
 
 func contaminate() -> void:
 	if(contaminated):
