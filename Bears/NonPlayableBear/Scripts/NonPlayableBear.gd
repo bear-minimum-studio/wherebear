@@ -16,15 +16,15 @@ const POSSIBLE_ACTIONS := [
 	{
 		"name" : "Idle",
 		"possible_directions": [Vector2.ZERO],
-		"min_duration": 3.0,
-		"max_duration": 6.0,
+		"min_duration": 2.0,
+		"max_duration": 4.0,
 		"roulade": false
 	},
 	{
 		"name" : "Walk",
 		"possible_directions": POSSIBLE_DIRECTIONS,
 		"min_duration": 0.5,
-		"max_duration": 3.0,
+		"max_duration": 5.0,
 		"roulade": false
 	},
 	{
