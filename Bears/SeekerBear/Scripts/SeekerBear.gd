@@ -32,3 +32,17 @@ func _switch_off_torch_light_handle() -> void:
 
 func _switch_on_torch_light_handle() -> void:
 	_torch_light_handle.set_visible(true)
+
+
+func contaminate() -> void:
+	pass
+
+func decontaminate() -> void:
+	pass
+
+
+func metamorphose() -> void:
+	pass
+
+func unmetamorphose() -> void:
+	pass

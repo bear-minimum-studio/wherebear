@@ -19,6 +19,13 @@ var _input_vector := Vector2.ZERO
 var _roulade := false
 var player_id := -1
 
+var contaminated := false
+var metamorphosed := false
+
+func _ready() -> void:
+	Events.connect("day_starts", self, "_on_day_starts")
+	Events.connect("day_ends", self, "_on_day_ends")
+
 # Virtual function to override
 # Used to get direction of movement
 func _update_input_vector() -> void:
@@ -60,12 +67,48 @@ func _physics_process(delta) -> void:
 	_update_velocity()
 	_update(delta)
 
-func _set_sprite(texture: Texture) -> void:
-	_sprite.set_texture(texture)
+func _on_day_starts() -> void:
+	unmetamorphose()
+
+func _on_day_ends() -> void:
+	metamorphose()
 
 ##########
 # PUBLIC #
 ##########
 
-func kill():
+func kill() -> void:
 	queue_free()
+
+func contaminate() -> void:
+	if(contaminated):
+		return
+	
+	contaminated = true
+	metamorphose()
+	Logger.debug('Contaminated')
+	
+func decontaminate() -> void:
+	if(!contaminated):
+		return
+	
+	contaminated = false
+	Logger.debug('Decontaminated')
+	unmetamorphose()
+
+
+func metamorphose() -> void:
+	if(metamorphosed || !contaminated):
+		return
+		
+	metamorphosed = true
+	_sprite.set_modulate(Color(0, 1, 0))
+	Logger.debug('Metamorphosed')
+
+func unmetamorphose() -> void:
+	if(!metamorphosed):
+		return
+	
+	metamorphosed = false
+	_sprite.set_modulate(Color(1, 1, 1))
+	Logger.debug('Unmetamorphosed')
