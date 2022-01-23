@@ -81,6 +81,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Events="*res://World/Events.gd"
+PlayerTurn="*res://World/PlayerTurn.gd"
 
 [display]
 

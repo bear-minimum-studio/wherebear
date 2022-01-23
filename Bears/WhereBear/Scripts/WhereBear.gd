@@ -2,7 +2,7 @@ class_name WhereBear
 extends GenericBear
 
 func _ready() -> void:
-	player_id = 1
+	player_id = PlayerTurn.get_werebear_player_id()
 	contaminated = true
 	metamorphose()
 

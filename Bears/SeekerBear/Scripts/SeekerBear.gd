@@ -4,7 +4,7 @@ extends GenericBear
 onready var _torch_light_handle := $TorchLightHandle
 
 func _ready() -> void:
-	player_id = 0
+	player_id = PlayerTurn.get_seeker_player_id()
 	_torch_light_handle.set_visible(false)
 	WALK_SPEED = 100.0
 	ROULADE_SPEED = 200.0

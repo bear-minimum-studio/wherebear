@@ -10,6 +10,10 @@ func _on_round_ended(score):
 	var timer = get_tree().create_timer(5.0)
 	yield(timer, "timeout")
 	
+
+	PlayerTurn.swap_players()
+
 	Logger.info("Reloading scene...")
 	get_tree().reload_current_scene()
 	Logger.info("Reloaded!")
+
