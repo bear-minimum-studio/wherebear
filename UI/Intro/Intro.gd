@@ -3,6 +3,8 @@ extends Control
 onready var anim_tree = $AnimationTree
 onready var dialog_iterator = $DialogIterator
 
+var Game = preload("res://Game/Game.tscn")
+
 const STORY_2_SCREEN_INDEX = 3
 
 var _final_animation_complete = false
@@ -14,8 +16,9 @@ func _ready():
 
 func _try_to_finish_intro():
 	if _final_animation_complete and _dialog_iterator_ended:
-		Logger.info("Intro is finished!")
-		pass
+		Logger.info("Intro is finished! Starting game...")
+		get_tree().change_scene_to(Game)
+
 
 func _input(event):
 	if (event is InputEventJoypadButton or event is InputEventKey) and event.pressed:
