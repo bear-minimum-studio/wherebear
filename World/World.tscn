@@ -47,27 +47,26 @@ visible = false
 [node name="OutsideWalls" type="Node2D" parent="Walls"]
 
 [node name="Wall1" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 586, -236 )
+position = Vector2( 586, -188 )
 scale = Vector2( 11.12, 1 )
 
 [node name="Wall2" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1579, 490 )
+position = Vector2( 1527, 490 )
 rotation = -1.57079
 scale = Vector2( 11.12, 1 )
 
 [node name="Wall3" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 586, 976 )
+position = Vector2( 586, 921 )
 scale = Vector2( 11.12, 1 )
 
 [node name="Wall4" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( -481, 488 )
+position = Vector2( -426, 488 )
 rotation = -1.57079
 scale = Vector2( 11.12, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 550, 370 )
 current = true
-zoom = Vector2( 2, 2 )
 
 [node name="CharactersContainer" type="YSort" parent="."]
 

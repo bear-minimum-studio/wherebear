@@ -288,16 +288,16 @@ __meta__ = {
 }
 
 [node name="Story1" type="Sprite" parent="."]
-position = Vector2( 511, 299 )
-scale = Vector2( 0.783854, 0.783854 )
+position = Vector2( 956, 537 )
+scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 3
 
 [node name="Story2" type="Sprite" parent="."]
 visible = false
-position = Vector2( 511, 299 )
-scale = Vector2( 0.783854, 0.783854 )
+position = Vector2( 956, 537 )
+scale = Vector2( 1.39974, 1.39974 )
 texture = ExtResource( 6 )
 hframes = 7
 vframes = 6
@@ -321,10 +321,9 @@ parameters/playback = SubResource( 8 )
 "parameters/Cutscene 2/TimeScale/scale" = 4.0
 
 [node name="PressAnyKey" type="Label" parent="."]
-margin_left = 219.0
-margin_top = 552.0
-margin_right = 827.0
-margin_bottom = 584.0
+margin_top = 889.0
+margin_right = 1906.0
+margin_bottom = 921.0
 custom_fonts/font = ExtResource( 3 )
 text = "Press any key to continue..."
 align = 1
@@ -334,13 +333,14 @@ __meta__ = {
 }
 
 [node name="DialogIterator" parent="." instance=ExtResource( 5 )]
+current_step = 1
 
 [node name="BearsLivingHappily" type="Label" parent="DialogIterator"]
 visible = false
-margin_left = 219.0
-margin_top = 73.0
-margin_right = 827.0
-margin_bottom = 140.0
+margin_left = 659.0
+margin_top = 190.0
+margin_right = 1267.0
+margin_bottom = 257.0
 text = "The bears were living happily!"
 align = 1
 autowrap = true
@@ -349,11 +349,10 @@ __meta__ = {
 }
 
 [node name="BearsLivingHappily2" type="Label" parent="DialogIterator"]
-visible = false
-margin_left = 219.0
-margin_top = 73.0
-margin_right = 827.0
-margin_bottom = 140.0
+margin_left = 659.0
+margin_top = 190.0
+margin_right = 1267.0
+margin_bottom = 292.0
 text = "They were rolling, dancing and sharing honey."
 align = 1
 autowrap = true
@@ -363,10 +362,10 @@ __meta__ = {
 
 [node name="Until" type="Label" parent="DialogIterator"]
 visible = false
-margin_left = 219.0
-margin_top = 73.0
-margin_right = 827.0
-margin_bottom = 140.0
+margin_left = 659.0
+margin_top = 190.0
+margin_right = 1267.0
+margin_bottom = 257.0
 text = "But one day..."
 align = 1
 autowrap = true
@@ -376,10 +375,10 @@ __meta__ = {
 
 [node name="Until2" type="Label" parent="DialogIterator"]
 visible = false
-margin_left = 219.0
-margin_top = 73.0
-margin_right = 827.0
-margin_bottom = 140.0
+margin_left = 659.0
+margin_top = 190.0
+margin_right = 1267.0
+margin_bottom = 292.0
 text = "A bear was bitten by a nasty human being!"
 align = 1
 autowrap = true
@@ -389,10 +388,10 @@ __meta__ = {
 
 [node name="Until3" type="Label" parent="DialogIterator"]
 visible = false
-margin_left = 219.0
-margin_top = 73.0
-margin_right = 827.0
-margin_bottom = 140.0
+margin_left = 659.0
+margin_top = 190.0
+margin_right = 1267.0
+margin_bottom = 327.0
 text = "Every night, this bear would transform into him..."
 align = 1
 autowrap = true
@@ -402,10 +401,10 @@ __meta__ = {
 
 [node name="Until4" type="Label" parent="DialogIterator"]
 visible = false
-margin_left = 219.0
-margin_top = 73.0
-margin_right = 827.0
-margin_bottom = 140.0
+margin_left = 659.0
+margin_top = 190.0
+margin_right = 1267.0
+margin_bottom = 257.0
 text = "And crave for more to bite!"
 align = 1
 autowrap = true
