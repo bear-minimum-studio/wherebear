@@ -13,6 +13,7 @@ var DIALOG_TEXTS := [
 	"Chouette",
 	"Grompf",
 	"Grrrrr",
+	"Grou grou",
 	"Roar"
 ]
 
