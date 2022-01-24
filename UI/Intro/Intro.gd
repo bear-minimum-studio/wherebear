@@ -5,6 +5,7 @@ onready var dialog_iterator = $DialogIterator
 
 var Game = preload("res://Game/Game.tscn")
 
+const STORY_1_SCREEN_INDEX = 1
 const STORY_2_SCREEN_INDEX = 3
 
 var _final_animation_complete = false
@@ -28,8 +29,12 @@ func _input(event):
 
 
 func _next_story(current_screen):
+	var state_machine = anim_tree["parameters/playback"]
+	
+	if current_screen == STORY_1_SCREEN_INDEX:
+		state_machine.travel("Cutscene 1")
+	
 	if current_screen == STORY_2_SCREEN_INDEX:
-		var state_machine = anim_tree["parameters/playback"]
 		state_machine.travel("Cutscene 2")
 
 func _on_AnimationPlayer_animation_finished():
