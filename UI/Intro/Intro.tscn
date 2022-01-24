@@ -313,7 +313,20 @@ margin_left = 219.0
 margin_top = 73.0
 margin_right = 827.0
 margin_bottom = 140.0
-text = "The bears were living happily..."
+text = "The bears were living happily!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BearsLivingHappily2" type="Label" parent="DialogIterator"]
+visible = false
+margin_left = 219.0
+margin_top = 73.0
+margin_right = 827.0
+margin_bottom = 140.0
+text = "They were rolling, dancing and sharing honey."
 align = 1
 autowrap = true
 __meta__ = {
@@ -326,7 +339,46 @@ margin_left = 219.0
 margin_top = 73.0
 margin_right = 827.0
 margin_bottom = 140.0
-text = "Until..."
+text = "But one day..."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Until2" type="Label" parent="DialogIterator"]
+visible = false
+margin_left = 219.0
+margin_top = 73.0
+margin_right = 827.0
+margin_bottom = 140.0
+text = "A bear was bitten by a nasty human being!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Until3" type="Label" parent="DialogIterator"]
+visible = false
+margin_left = 219.0
+margin_top = 73.0
+margin_right = 827.0
+margin_bottom = 140.0
+text = "Every night, this bear would transform into him..."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Until4" type="Label" parent="DialogIterator"]
+visible = false
+margin_left = 219.0
+margin_top = 73.0
+margin_right = 827.0
+margin_bottom = 140.0
+text = "And crave for more to bite!"
 align = 1
 autowrap = true
 __meta__ = {

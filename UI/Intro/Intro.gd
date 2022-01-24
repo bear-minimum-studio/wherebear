@@ -3,7 +3,7 @@ extends Control
 onready var anim_tree = $AnimationTree
 onready var dialog_iterator = $DialogIterator
 
-const STORY_2_SCREEN_INDEX = 1
+const STORY_2_SCREEN_INDEX = 3
 
 func _ready():
 	dialog_iterator.start()
