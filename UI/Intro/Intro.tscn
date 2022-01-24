@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://UI/Intro/story_1.png" type="Texture" id=1]
 [ext_resource path="res://UI/theme.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://UI/DialogIterator/DialogIterator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Intro/scene_2.png" type="Texture" id=6]
 [ext_resource path="res://UI/Intro/splash.png" type="Texture" id=7]
+[ext_resource path="res://UI/Intro/AnimationTree.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Cutscene"
@@ -454,12 +455,12 @@ anims/Reverse = SubResource( 3 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 8 )
 "parameters/Custcene Reverse/TimeScale/scale" = 4.0
 "parameters/Cutscene 1/TimeScale/scale" = 4.0
 "parameters/Cutscene 2/TimeScale/scale" = 4.0
 parameters/Menu/TimeScale/scale = 4.0
+script = ExtResource( 8 )
 
 [node name="PressAnyKey" type="Label" parent="."]
 margin_top = 881.0
