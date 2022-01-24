@@ -68,7 +68,6 @@ func _ready():
 		_spawn(non_playable_bear_scene)
 
 func _spawn(scene) -> void:
-	var square_extents = spawn_zone_area.shape.extents
 	var x = rand_range(0, square_extents.x * 2)
 	var y = rand_range(0, square_extents.y * 2)
 

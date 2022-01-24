@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	# warning-ignore:return_value_discarded
 	Events.connect("round_ended", self, "_on_round_ended")
 
 func _on_round_ended(score):
@@ -14,6 +15,7 @@ func _on_round_ended(score):
 	PlayerTurn.swap_players()
 
 	Logger.info("Reloading scene...")
+	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	Logger.info("Reloaded!")
 
