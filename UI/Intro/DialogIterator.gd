@@ -4,6 +4,7 @@ extends Control
 export (int) var current_step = 0 setget _set_current_step
 
 signal end
+signal screen_end
 
 var is_active = false
 
@@ -27,20 +28,21 @@ func print_screen(_step):
 		else:
 			child.visible = false
 
-func _input(event):
+func next():
 	if !is_active:
 		return
 		
 	var number_of_steps = get_children().size()
-	if event.is_action_pressed("ui_accept"):
-		current_step += 1
-		
-		if (current_step >= number_of_steps):
-			is_active = false
-			hide()
-			emit_signal("end")
-		else:
-			print_screen(current_step)
+
+	current_step += 1
+	
+	if (current_step >= number_of_steps):
+		is_active = false
+		emit_signal("screen_end", current_step)
+		emit_signal("end")
+	else:
+		emit_signal("screen_end", current_step)
+		print_screen(current_step)
 
 func _set_current_step(new_current_step):
 	current_step = new_current_step
