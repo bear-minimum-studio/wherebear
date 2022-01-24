@@ -265,7 +265,8 @@ __meta__ = {
 position = Vector2( 511, 299 )
 scale = Vector2( 0.783854, 0.783854 )
 texture = ExtResource( 1 )
-hframes = 10
+hframes = 3
+vframes = 3
 
 [node name="Story2" type="Sprite" parent="."]
 visible = false
