@@ -1,6 +1,6 @@
 extends Node2D
 
-const NUMBER_OF_BEARS := 15
+const NUMBER_OF_BEARS := 40
 
 const DAY_CYCLE_HALF_PERIOD := 20.0
 const DAY_CYCLE_FADE_DURATION := 2.0
