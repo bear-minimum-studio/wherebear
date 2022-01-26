@@ -481,6 +481,7 @@ margin_right = 0.0
 margin_bottom = 0.0
 
 [node name="Empty" type="Label" parent="DialogIterator"]
+visible = false
 margin_left = 395.0
 margin_top = 176.0
 margin_right = 1499.0
