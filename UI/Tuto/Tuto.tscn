@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/theme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Tuto/KeyHint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Tuto/MovementHint.tscn" type="PackedScene" id=3]
 
 [node name="Tuto" type="Control"]
 anchor_right = 1.0
@@ -57,35 +58,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Doctor"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Doctor"]
 margin_top = 199.0
 margin_right = 1664.0
 margin_bottom = 399.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Doctor/HBoxContainer"]
+margin_right = 1302.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KeyHint" parent="MarginContainer/VBoxContainer/Doctor/VBoxContainer" instance=ExtResource( 2 )]
-margin_right = 1664.0
+[node name="KeyHint" parent="MarginContainer/VBoxContainer/Doctor/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 1302.0
 margin_bottom = 64.0
-button = "V"
 label = "Roll"
 
-[node name="KeyHint2" parent="MarginContainer/VBoxContainer/Doctor/VBoxContainer" instance=ExtResource( 2 )]
+[node name="KeyHint2" parent="MarginContainer/VBoxContainer/Doctor/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 68.0
-margin_right = 1664.0
+margin_right = 1302.0
 margin_bottom = 132.0
-button = "X"
+joy_button = "X_button"
 keymap = "C"
 label = "Try to cure"
 
-[node name="KeyHint3" parent="MarginContainer/VBoxContainer/Doctor/VBoxContainer" instance=ExtResource( 2 )]
+[node name="KeyHint3" parent="MarginContainer/VBoxContainer/Doctor/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 136.0
-margin_right = 1664.0
+margin_right = 1302.0
 margin_bottom = 200.0
-button = "X"
+joy_button = "Y_button"
 keymap = "V"
 label = "Call for hello!"
+
+[node name="MovementHint" parent="MarginContainer/VBoxContainer/Doctor/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 1306.0
+margin_right = 1664.0
+margin_bottom = 200.0
+player = "p0"
 
 [node name="Werebear" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 403.0
@@ -117,33 +128,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Werebear"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Werebear"]
 margin_top = 246.0
 margin_right = 1664.0
 margin_bottom = 446.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Werebear/HBoxContainer"]
+margin_right = 1302.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KeyHint" parent="MarginContainer/VBoxContainer/Werebear/VBoxContainer" instance=ExtResource( 2 )]
-margin_right = 1664.0
+[node name="KeyHint" parent="MarginContainer/VBoxContainer/Werebear/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 1302.0
 margin_bottom = 64.0
-button = "X"
 keymap = "T"
 label = "Roll"
 
-[node name="KeyHint2" parent="MarginContainer/VBoxContainer/Werebear/VBoxContainer" instance=ExtResource( 2 )]
+[node name="KeyHint2" parent="MarginContainer/VBoxContainer/Werebear/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 68.0
-margin_right = 1664.0
+margin_right = 1302.0
 margin_bottom = 132.0
-button = "X"
+joy_button = "X_button"
 keymap = "Y"
 label = "Contaminate (at night)"
 
-[node name="KeyHint3" parent="MarginContainer/VBoxContainer/Werebear/VBoxContainer" instance=ExtResource( 2 )]
+[node name="KeyHint3" parent="MarginContainer/VBoxContainer/Werebear/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 136.0
-margin_right = 1664.0
+margin_right = 1302.0
 margin_bottom = 200.0
-button = "X"
+joy_button = "Y_button"
 keymap = "U"
 label = "Answer hello!"
+
+[node name="MovementHint2" parent="MarginContainer/VBoxContainer/Werebear/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 1306.0
+margin_right = 1664.0
+margin_bottom = 200.0
+player = "p1"

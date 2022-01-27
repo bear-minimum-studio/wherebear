@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/font_smaller.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Tuto/Resources/Joystick.png" type="Texture" id=3]
+[ext_resource path="res://UI/Tuto/Resources/K.png" type="Texture" id=4]
+[ext_resource path="res://UI/Tuto/MovementHint.gd" type="Script" id=5]
+[ext_resource path="res://UI/Tuto/Resources/L.png" type="Texture" id=6]
+[ext_resource path="res://UI/Tuto/Resources/J.png" type="Texture" id=7]
+[ext_resource path="res://UI/Tuto/Resources/I.png" type="Texture" id=8]
+
+[node name="MovementHint" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+custom_constants/separation = 24
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+player = "0"
+
+[node name="Action" type="Label" parent="."]
+margin_top = 30.0
+margin_right = 112.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 2 )
+text = "Move"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoyButtonImage" type="TextureRect" parent="."]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 13.66
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyContainer" type="VBoxContainer" parent="."]
+margin_left = 224.0
+margin_right = 358.0
+margin_bottom = 88.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="KeyUp" type="TextureRect" parent="KeyContainer"]
+margin_right = 134.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 42, 42 )
+size_flags_stretch_ratio = 13.66
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeySubContainer" type="HBoxContainer" parent="KeyContainer"]
+margin_top = 46.0
+margin_right = 134.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyLeft" type="TextureRect" parent="KeyContainer/KeySubContainer"]
+margin_right = 42.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 42, 42 )
+size_flags_stretch_ratio = 13.66
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyDown" type="TextureRect" parent="KeyContainer/KeySubContainer"]
+margin_left = 46.0
+margin_right = 88.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 42, 42 )
+size_flags_stretch_ratio = 13.66
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyRight" type="TextureRect" parent="KeyContainer/KeySubContainer"]
+margin_left = 92.0
+margin_right = 134.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 42, 42 )
+size_flags_stretch_ratio = 13.66
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
