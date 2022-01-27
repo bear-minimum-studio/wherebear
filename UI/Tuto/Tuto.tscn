@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://UI/theme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Tuto/KeyHint.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Bears/NonPlayableBear/good_bear.png" type="Texture" id=4]
 [ext_resource path="res://Bears/SeekerBear/Resources/doc_bear_frwrd_run.png" type="Texture" id=5]
 [ext_resource path="res://UI/font_smaller.tres" type="DynamicFont" id=6]
+[ext_resource path="res://UI/Tuto/Tuto.gd" type="Script" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -63,6 +64,7 @@ animations = [ {
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,7 +121,7 @@ rect_min_size = Vector2( 170, 150 )
 [node name="AnimatedDoctor" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/Doctor/HBoxContainer2/BearSprite"]
 position = Vector2( 83, 67 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Doctor"]
@@ -211,7 +213,7 @@ rect_min_size = Vector2( 170, 150 )
 [node name="AnimatedWhere" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/Werebear/HBoxContainer2/BearSprite2"]
 position = Vector2( 83, 68 )
 frames = SubResource( 10 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Werebear"]

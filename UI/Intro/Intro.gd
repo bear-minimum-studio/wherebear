@@ -3,7 +3,7 @@ extends Control
 onready var anim_tree = $AnimationTree
 onready var dialog_iterator = $DialogIterator
 
-var Game = preload("res://Game/Game.tscn")
+var Tuto = preload("res://UI/Tuto/Tuto.tscn")
 
 const STORY_1_SCREEN_INDEX = 1
 const STORY_2_SCREEN_INDEX = 3
@@ -18,7 +18,7 @@ func _ready():
 func _try_to_finish_intro():
 	if _final_animation_complete and _dialog_iterator_ended:
 		Logger.info("Intro is finished! Starting game...")
-		get_tree().change_scene_to(Game)
+		get_tree().change_scene_to(Tuto)
 
 
 func _input(event):
