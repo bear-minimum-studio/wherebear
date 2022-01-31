@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Bears/NonPlayableBear/bear_shader.tres" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/u_color_key = Color( 0.811765, 0.129412, 0.172549, 1 )
+shader_param/u_replacement_color = Color( 0.6, 0.105882, 0.105882, 1 )
+shader_param/u_color_key_2 = Color( 0.196078, 0.517647, 0.392157, 1 )
+shader_param/u_replacement_color_2 = Color( 0.341176, 0.301961, 1, 1 )
