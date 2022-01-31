@@ -9,10 +9,30 @@ uniform vec4 u_replacement_color : hint_color;
 uniform vec4 u_color_key_2 : hint_color;
 uniform vec4 u_replacement_color_2 : hint_color;
 
+uniform vec4 u_skin_color_1: hint_color;
+uniform vec4 u_skin_color_replacement_1: hint_color;
+uniform vec4 u_skin_color_2: hint_color;
+uniform vec4 u_skin_color_replacement_2: hint_color;
+uniform vec4 u_skin_color_3: hint_color;
+uniform vec4 u_skin_color_replacement_3: hint_color;
+
+float compute_color_distance(vec4 color1, vec4 color2) {
+	vec4 d4 = abs(color1 - color2);
+	float d = max(max(d4.r, d4.g), d4.b);
+	return d;
+}
+
 vec4 get_replaced_color(vec4 col, vec4 color_key, vec4 replacement_color) {
-	vec4 d4 = abs(col - color_key);
-	float d_1 = max(max(d4.r, d4.g), d4.b);
-	if(d_1 < 0.01) {
+	// If one of the two colors is black, don't replace it
+	if (compute_color_distance(color_key, vec4(0, 0, 0, 0)) == 0.0) {
+		return col;
+	}
+	if (compute_color_distance(replacement_color, vec4(0, 0, 0, 0)) == 0.0) {
+		return col;
+	}
+
+	float d = compute_color_distance(col, color_key);
+	if(d < 0.01) {
 		return replacement_color;
 	}
 	return col;
@@ -22,6 +42,10 @@ void fragment() {
 	vec4 col = texture(TEXTURE, UV);
 	col = get_replaced_color(col, u_color_key, u_replacement_color);
 	col = get_replaced_color(col, u_color_key_2, u_replacement_color_2);
+
+	col = get_replaced_color(col, u_skin_color_1, u_skin_color_replacement_1);
+	col = get_replaced_color(col, u_skin_color_2, u_skin_color_replacement_2);
+	col = get_replaced_color(col, u_skin_color_3, u_skin_color_replacement_3);
 
 	COLOR = col;
 }"
