@@ -2,6 +2,8 @@ class_name SeekerBear
 extends GenericBear
 
 onready var _torch_light_handle := $TorchLightHandle
+onready var _good_catch_audio := $Audio/GoodCatch
+onready var _wrong_catch_audio := $Audio/WrongCatch
 
 func _ready() -> void:
 	player_id = PlayerTurn.get_seeker_player_id()
@@ -13,6 +15,10 @@ func _ready() -> void:
 	Events.connect("dawn_ends", self, "_switch_off_torch_light_handle")
 	# warning-ignore:return_value_discarded
 	Events.connect("dusk_starts", self, "_switch_on_torch_light_handle")
+	
+	Events.connect("contaminated_non_playable_bear_caught", self, "_on_catch")
+	Events.connect("wherebear_caught", self, "_on_catch")
+	Events.connect("uncontaminated_non_playable_bear_caught", self, "_on_wrong_catch")
 
 func _update(_delta) -> void:
 	if (_torch_light_handle):
@@ -86,3 +92,9 @@ func metamorphose() -> void:
 
 func unmetamorphose() -> void:
 	pass
+
+func _on_catch() -> void:
+	_good_catch_audio.play()
+
+func _on_wrong_catch() -> void:
+	_wrong_catch_audio.play()

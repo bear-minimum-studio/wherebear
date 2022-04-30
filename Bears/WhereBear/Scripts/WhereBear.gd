@@ -1,10 +1,14 @@
 class_name WhereBear
 extends GenericBear
 
+onready var bite := $Audio/Bite
+
 func _ready() -> void:
 	player_id = PlayerTurn.get_werebear_player_id()
 	contaminated = true
 	metamorphose()
+
+	Events.connect("non_playable_bear_contaminated", self, "_on_good_bite")
 
 # Virtual function to override
 # Used to handle all inputs/actions
@@ -61,6 +65,10 @@ func _bite_compare(a : Area2D, b : Area2D) -> bool:
 		return keep_b
 		
 	return keep_a
+
+func _on_good_bite() -> void:
+	bite.play()
+
 
 func catch() -> void:
 	Events.emit_signal("wherebear_caught")
