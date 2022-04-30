@@ -39,18 +39,25 @@ func _bite_compare(a : Area2D, b : Area2D) -> bool:
 	if !(a is HurtBox):
 		return keep_b
 	
-	# If one is contaminated keep the other one
-	# If both are keep a
-	if (a.owner.contaminated):
-		return keep_b
-	if (b.owner.contaminated):
+	# If one is not a NonPlayableBear keep the other
+	# If both are not keep a
+	if !(b.owner is NonPlayableBear):
 		return keep_a
+	if !(a.owner is NonPlayableBear):
+		return keep_b
 	
 	# If one is the WhereBear keep the other
 	# If both are keep a
 	if (b.owner == self):
 		return keep_a
 	if (a.owner == self):
+		return keep_b
+	
+	# If one is not contaminated keep it
+	# If both are not keep a
+	if !(a.owner.contaminated):
+		return keep_a
+	if !(b.owner.contaminated):
 		return keep_b
 		
 	return keep_a
