@@ -38,6 +38,7 @@ const POSSIBLE_ACTIONS := [
 
 onready var _action_timer := $ActionTimer
 onready var _talk_reaction_timer := $TalkReactionTimer
+onready var _hit_animation := $HitAnimation
 
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
@@ -76,6 +77,7 @@ func catch() -> void:
 	else:
 		Events.emit_signal("uncontaminated_non_playable_bear_caught")
 		Logger.debug("Catch fail")
+		_hit_animation.play("Hit")
 
 func contaminate() -> void:
 	if(contaminated):
