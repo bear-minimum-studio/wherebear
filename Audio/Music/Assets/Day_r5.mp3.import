@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Day_r5.mp3-33c0349214947508ea9cfe3d604fb79f.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Assets/Day_r5.mp3"
+dest_files=[ "res://.import/Day_r5.mp3-33c0349214947508ea9cfe3d604fb79f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

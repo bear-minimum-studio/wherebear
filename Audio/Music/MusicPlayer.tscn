@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Audio/Music/Assets/Day_r5.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Audio/Music/Assets/Sunrise_r1.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Audio/Music/Assets/Night_r1.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Audio/Music/MusicPlayer.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "DawnFade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Day:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 2.07053, 0.366225 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Night:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.366021, 2.07168 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "DuskFade"
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Day:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Night:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Sunrise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Music"
+
+[node name="Day" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Music"
+
+[node name="Night" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -80.0
+bus = "Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DawnFade = SubResource( 1 )
+anims/DuskFade = SubResource( 3 )
+anims/RESET = SubResource( 2 )
+
+[connection signal="finished" from="Sunrise" to="." method="_on_Sunrise_finished"]

@@ -42,6 +42,7 @@ onready var spawn_zone = $SpawnZone
 onready var canvas_modulate = $CanvasModulate
 onready var day_cycle_tween = $CanvasModulate/DayCycleTween
 onready var characters_container = $CharactersContainer
+onready var music_player = $MusicPlayer
 
 var seekerbear_scene = preload("res://Bears/SeekerBear/SeekerBear.tscn")
 var wherebear_scene = preload("res://Bears/WhereBear/WhereBear.tscn")
@@ -90,6 +91,10 @@ func _next_day_cycle_phase() -> void:
 	Events.emit_signal(_day_cycle_phase.signal)
 	if _day_cycle_phase.fade_to_color != null:
 		_fade_light(_day_cycle_phase.fade_to_color, _day_cycle_phase.duration)
+		if _day_cycle_phase.signal == "day_starts":
+			music_player.dusk()
+		else:
+			music_player.dawn()
 	else:
 		_fade_light(canvas_modulate.get_color(), _day_cycle_phase.duration)
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sunrise_r1.mp3-f8817f13f20c72f62abfe14bcc1e188c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Assets/Sunrise_r1.mp3"
+dest_files=[ "res://.import/Sunrise_r1.mp3-f8817f13f20c72f62abfe14bcc1e188c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
