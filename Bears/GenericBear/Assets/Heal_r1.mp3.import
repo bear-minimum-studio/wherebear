@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heal_r1.mp3-f0c5d3b91be745c29c99a4aaddb7f2cc.mp3str"
+
+[deps]
+
+source_file="res://Bears/GenericBear/Assets/Heal_r1.mp3"
+dest_files=[ "res://.import/Heal_r1.mp3-f0c5d3b91be745c29c99a4aaddb7f2cc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

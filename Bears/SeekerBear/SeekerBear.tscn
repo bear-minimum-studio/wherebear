@@ -4,8 +4,8 @@
 [ext_resource path="res://TorchLight/TorchLightHandle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Bears/SeekerBear/Scripts/SeekerBear.gd" type="Script" id=3]
 [ext_resource path="res://Bears/SeekerBear/Resources/doc_bear_frwrd_run.png" type="Texture" id=4]
-[ext_resource path="res://Bears/GenericBear/Assets/healGood.mp3" type="AudioStream" id=5]
-[ext_resource path="res://Bears/GenericBear/Assets/healBad.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Bears/GenericBear/Assets/Heal_r1.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Bears/GenericBear/Assets/HealFail_r1.mp3" type="AudioStream" id=6]
 
 [node name="SeekerBear" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
