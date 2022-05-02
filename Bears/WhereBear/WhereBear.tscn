@@ -4,7 +4,7 @@
 [ext_resource path="res://Bears/WhereBear/Scripts/WhereBear.gd" type="Script" id=2]
 [ext_resource path="res://Bears/NonPlayableBear/good_bear.png" type="Texture" id=3]
 [ext_resource path="res://Bears/NonPlayableBear/bear_shader_material.tres" type="Material" id=4]
-[ext_resource path="res://Bears/GenericBear/Assets/bite.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Bears/GenericBear/Assets/Bite_r1.mp3" type="AudioStream" id=5]
 
 [node name="WhereBear" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -20,3 +20,4 @@ position = Vector2( 0, 0 )
 
 [node name="Bite" type="AudioStreamPlayer" parent="Audio" index="0"]
 stream = ExtResource( 5 )
+volume_db = -13.109
