@@ -2,6 +2,7 @@ extends Control
 
 onready var anim_tree = $AnimationTree
 onready var dialog_iterator = $DialogIterator
+onready var next_fx = $NextFX
 
 var Tuto = preload("res://UI/Tuto/Tuto.tscn")
 
@@ -30,6 +31,7 @@ func _input(event):
 
 func _next_story(current_screen):
 	var state_machine = anim_tree["parameters/playback"]
+	next_fx.play()
 	
 	if current_screen == STORY_1_SCREEN_INDEX:
 		state_machine.travel("Cutscene 1")
@@ -45,3 +47,4 @@ func _on_AnimationPlayer_animation_finished():
 func _on_DialogIterator_end():
 	_dialog_iterator_ended = true
 	_try_to_finish_intro()
+
