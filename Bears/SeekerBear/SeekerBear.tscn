@@ -28,4 +28,5 @@ bus = "SFX"
 
 [node name="WrongCatch" type="AudioStreamPlayer" parent="Audio" index="1"]
 stream = ExtResource( 6 )
+volume_db = -5.244
 bus = "SFX"
