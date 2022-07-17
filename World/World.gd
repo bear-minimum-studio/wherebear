@@ -42,7 +42,7 @@ onready var spawn_zone = $SpawnZone
 onready var canvas_modulate = $CanvasModulate
 onready var day_cycle_tween = $CanvasModulate/DayCycleTween
 onready var characters_container = $CharactersContainer
-onready var music_player = $MusicPlayer
+onready var music_player = MusicPlayer
 
 var seekerbear_scene = preload("res://Bears/SeekerBear/SeekerBear.tscn")
 var wherebear_scene = preload("res://Bears/WhereBear/WhereBear.tscn")

@@ -20,6 +20,7 @@ func _next_round():
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	Logger.info("Reloaded!")
+	MusicPlayer.restart()
 	game_ended = false
 
 func _input(event: InputEvent) -> void:

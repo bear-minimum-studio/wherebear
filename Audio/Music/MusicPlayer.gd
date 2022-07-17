@@ -12,6 +12,10 @@ func _ready():
 func start():
 	sunrise.play()
 
+func restart():
+	stop()
+	start()
+
 func stop():
 	day.stop()
 	night.stop()
