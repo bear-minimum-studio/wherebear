@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bite_r3.mp3-8703c1dff24c0e6e49867f655eba60a3.mp3str"
+
+[deps]
+
+source_file="res://Bears/GenericBear/Assets/Bite_r3.mp3"
+dest_files=[ "res://.import/Bite_r3.mp3-8703c1dff24c0e6e49867f655eba60a3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

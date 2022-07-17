@@ -1,7 +1,10 @@
 class_name WhereBear
 extends GenericBear
 
-onready var bite := $Audio/Bite
+onready var bites := [$Audio/Bite, 
+					 $Audio/Bite2, 
+					 $Audio/Bite3,
+					]
 
 func _ready() -> void:
 	player_id = PlayerTurn.get_werebear_player_id()
@@ -67,6 +70,8 @@ func _bite_compare(a : Area2D, b : Area2D) -> bool:
 	return keep_a
 
 func _on_good_bite() -> void:
+	var bite = bites[randi() % bites.size()]
+	bite.set_pitch_scale(0.9 + randf()*0.2 )
 	bite.play()
 
 
