@@ -1,10 +1,11 @@
 extends Node
 
 
-onready var sunrise = $Sunrise
-onready var day = $Day
-onready var night = $Night
-onready var is_day = true
+onready var sunrise := $Sunrise
+onready var day := $Day
+onready var night := $Night
+
+var is_day := true
 
 func _ready():
 	start()
@@ -14,11 +15,15 @@ func start():
 
 func restart():
 	stop()
+	lowpass(false)
 	start()
 
 func stop():
 	day.stop()
 	night.stop()
+
+func lowpass(enabled):
+	AudioServer.set_bus_effect_enabled(1,0,enabled)
 
 func dawn():
 	$AnimationPlayer.play("DawnFade")

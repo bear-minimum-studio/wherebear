@@ -9,6 +9,7 @@ func _ready():
 func _on_round_ended(score):
 	Logger.info("Game ended!")
 	$UICanvas/ScoreDisplay.display_score(score)
+	MusicPlayer.lowpass(true)
 	var timer = get_tree().create_timer(0.5)
 	yield(timer, "timeout")
 	game_ended = true
