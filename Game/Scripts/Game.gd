@@ -1,5 +1,7 @@
 extends Node2D
 
+var game_ended := false
+
 func _ready():
 	# warning-ignore:return_value_discarded
 	Events.connect("round_ended", self, "_on_round_ended")
@@ -7,15 +9,19 @@ func _ready():
 func _on_round_ended(score):
 	Logger.info("Game ended!")
 	$UICanvas/ScoreDisplay.display_score(score)
-
-	var timer = get_tree().create_timer(5.0)
+	var timer = get_tree().create_timer(0.5)
 	yield(timer, "timeout")
-	
+	game_ended = true
 
+func _next_round():
 	PlayerTurn.swap_players()
-
+	
 	Logger.info("Reloading scene...")
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	Logger.info("Reloaded!")
+	game_ended = false
 
+func _input(event: InputEvent) -> void:
+	if game_ended && event.is_action_pressed("ui_accept"):
+		_next_round()
