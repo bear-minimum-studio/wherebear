@@ -23,6 +23,16 @@ func init(number_of_bears: int):
 func print_score() -> void:
 	Logger.debug("Score: %d" % _score)
 
+func _update_number_of_bears() -> void:
+	_number_of_bears -= 1
+	if _number_of_bears < 1:
+		_round_ending()
+
+func _round_ending() -> void:
+	Events.emit_signal("round_ended", _score)
+	Logger.debug("ROUND ENDED")
+	print_score()
+
 func _on_contaminated_non_playable_bear_caught() -> void:
 	_score += CONTAMINATED_CATCH_POINTS
 	print_score()
@@ -32,10 +42,9 @@ func _on_uncontaminated_non_playable_bear_caught() -> void:
 	print_score()
 
 func _on_wherebear_caught() -> void:
-	Events.emit_signal("round_ended", _score)
-	Logger.debug("ROUND ENDED")
-	print_score()
+	_round_ending()
 
 func _on_non_playable_bear_contaminated() -> void:
 	_score += CONTAMINATION_POINTS
+	_update_number_of_bears()
 	print_score()
