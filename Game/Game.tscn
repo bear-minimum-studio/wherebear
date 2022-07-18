@@ -3,7 +3,7 @@
 [ext_resource path="res://World/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Scripts/Score.gd" type="Script" id=4]
 [ext_resource path="res://Game/Scripts/Game.gd" type="Script" id=5]
-[ext_resource path="res://UI/ScoreDisplay/ScoreDisplay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/RoundEndDisplay/RoundEndDisplay.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -15,5 +15,5 @@ script = ExtResource( 4 )
 
 [node name="UICanvas" type="CanvasLayer" parent="."]
 
-[node name="ScoreDisplay" parent="UICanvas" instance=ExtResource( 6 )]
+[node name="RoundEndDisplay" parent="UICanvas" instance=ExtResource( 6 )]
 visible = false
