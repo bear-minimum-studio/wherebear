@@ -1,8 +1,15 @@
 extends Node2D
 
+const NUMBER_OF_BEARS := 40
+
+onready var score := $Score
+onready var world := $World
+
 var game_ended := false
 
 func _ready():
+	score.init(NUMBER_OF_BEARS)
+	world.init(NUMBER_OF_BEARS)
 	# warning-ignore:return_value_discarded
 	Events.connect("round_ended", self, "_on_round_ended")
 

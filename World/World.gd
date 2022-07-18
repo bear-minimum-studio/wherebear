@@ -1,7 +1,5 @@
 extends Node2D
 
-const NUMBER_OF_BEARS := 40
-
 const DAY_CYCLE_HALF_PERIOD := 20.0
 const DAY_CYCLE_FADE_DURATION := 2.0
 const DAY_CYCLE_DAY_DURATION := DAY_CYCLE_HALF_PERIOD - 2 * DAY_CYCLE_FADE_DURATION
@@ -60,12 +58,13 @@ func _ready():
 	canvas_modulate.set_color(DAY_CANVAS_COLOR)
 	_next_day_cycle_phase()
 
+func init(number_of_bears: int):
 	randomize()
 
 	Logger.info("Spawning bears")
 	_spawn(seekerbear_scene)
 	_spawn(wherebear_scene)
-	for _i in range(NUMBER_OF_BEARS):
+	for _i in range(number_of_bears):
 		_spawn(non_playable_bear_scene)
 
 func _spawn(scene) -> void:

@@ -5,6 +5,7 @@ const CONTAMINATED_CATCH_POINTS := -1
 const UNCONTAMINATED_CATCH_POINTS := 1
 
 var _score := 0
+var _number_of_bears: int
 
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
@@ -15,6 +16,9 @@ func _ready() -> void:
 	Events.connect("wherebear_caught", self, "_on_wherebear_caught")
 	# warning-ignore:return_value_discarded
 	Events.connect("non_playable_bear_contaminated", self, "_on_non_playable_bear_contaminated")
+
+func init(number_of_bears: int):
+	_number_of_bears = number_of_bears
 
 func print_score() -> void:
 	Logger.debug("Score: %d" % _score)
