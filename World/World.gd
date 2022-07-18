@@ -98,7 +98,7 @@ func _next_day_cycle_phase() -> void:
 		_fade_light(canvas_modulate.get_color(), _day_cycle_phase.duration)
 
 func _input(event) -> void:
-	if event.is_action_pressed("debug_1"):
+	if OS.is_debug_build() and event.is_action_pressed("debug_1"):
 		_next_day_cycle_phase()
 
 func _on_DayCycleTween_tween_completed(_object, _key) -> void:

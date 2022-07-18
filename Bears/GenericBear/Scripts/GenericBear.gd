@@ -76,8 +76,6 @@ func _parse_inputs() -> void:
 # Virtual function to override
 # Used to handle logic of the bear
 func _update(_delta) -> void:
-	if Input.is_action_just_pressed("debug_2"):
-		_talk()
 	pass
 
 func _update_velocity() -> void:
