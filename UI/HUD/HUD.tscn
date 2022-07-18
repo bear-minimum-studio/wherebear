@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/font_smaller.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/font_bigger.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/HUD/HUD.gd" type="Script" id=4]
+
+[node name="HUD" type="Control"]
+modulate = Color( 1, 1, 1, 0.486275 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 245.0
+margin_bottom = 159.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+margin_right = 225.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Werebear score"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+margin_top = 75.0
+margin_right = 225.0
+margin_bottom = 139.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "52"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

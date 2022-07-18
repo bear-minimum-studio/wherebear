@@ -6,6 +6,7 @@ const UNCONTAMINATED_CATCH_POINTS := 1
 
 var _score := 0
 var _number_of_bears: int
+var _hud : Control
 
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
@@ -17,10 +18,13 @@ func _ready() -> void:
 	# warning-ignore:return_value_discarded
 	Events.connect("non_playable_bear_contaminated", self, "_on_non_playable_bear_contaminated")
 
-func init(number_of_bears: int):
+func init(number_of_bears: int, hud: Control):
 	_number_of_bears = number_of_bears
+	_hud = hud
+	print_score()
 
 func print_score() -> void:
+	_hud.update_score(_score)
 	Logger.debug("Score: %d" % _score)
 
 func _update_number_of_bears() -> void:

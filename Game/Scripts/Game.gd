@@ -4,17 +4,19 @@ const NUMBER_OF_BEARS := 40
 
 onready var score := $Score
 onready var world := $World
+onready var hud := $UICanvas/HUD
 
 var game_ended := false
 
 func _ready():
-	score.init(NUMBER_OF_BEARS)
+	score.init(NUMBER_OF_BEARS, hud)
 	world.init(NUMBER_OF_BEARS)
 	# warning-ignore:return_value_discarded
 	Events.connect("round_ended", self, "_on_round_ended")
 
 func _on_round_ended(score):
 	Logger.info("Game ended!")
+	hud.hide()
 	$UICanvas/RoundEndDisplay.display_score(score)
 	MusicPlayer.lowpass(true)
 	var timer = get_tree().create_timer(0.5)
