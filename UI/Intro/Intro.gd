@@ -28,7 +28,7 @@ func _force_finish_intro():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_skip_intro"):
 		_force_finish_intro()
-	elif (event is InputEventJoypadButton or event is InputEventKey) and event.pressed:
+	elif event.is_action_pressed("ui_accept"):
 		Logger.debug("Going to next dialog")
 		dialog_iterator.next()
 		_try_to_finish_intro()
