@@ -83,7 +83,7 @@ config/icon="res://icon.png"
 Events="*res://World/Events.gd"
 PlayerTurn="*res://World/PlayerTurn.gd"
 MusicPlayer="*res://Audio/Music/MusicPlayer.tscn"
-App="*res://App/App.tscn"
+Settings="*res://Settings/Settings.tscn"
 
 [display]
 
