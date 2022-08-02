@@ -8,13 +8,13 @@ var configPath = "user://settings.cfg"
 var _fullscreen := false
 
 # default values are stored in default_bus_layout
-var _master_gain := AudioServer.get_bus_volume_db(0)
-var _music_gain := AudioServer.get_bus_volume_db(1)
-var _sfx_gain := AudioServer.get_bus_volume_db(2)
+var _master_gain := AudioServer.get_bus_volume_db(MusicPlayer.MASTER_BUS)
+var _music_gain := AudioServer.get_bus_volume_db(MusicPlayer.MUSIC_BUS)
+var _sfx_gain := AudioServer.get_bus_volume_db(MusicPlayer.SFX_BUS)
 
-var _master_muted := AudioServer.is_bus_mute(0)
-var _music_muted := AudioServer.is_bus_mute(1)
-var _sfx_muted := AudioServer.is_bus_mute(2)
+var _master_muted := AudioServer.is_bus_mute(MusicPlayer.MASTER_BUS)
+var _music_muted := AudioServer.is_bus_mute(MusicPlayer.MUSIC_BUS)
+var _sfx_muted := AudioServer.is_bus_mute(MusicPlayer.SFX_BUS)
 
 func _ready():
 	_load_settings()
@@ -74,41 +74,41 @@ func _toggle_fullscreen() -> void:
 	set_fullscreen(not get_fullscreen())
 
 func set_master_gain(gain: float) -> void:
-	AudioServer.set_bus_volume_db(0,gain)
+	AudioServer.set_bus_volume_db(MusicPlayer.MASTER_BUS,gain)
 	config.set_value("Settings", "master_gain", get_master_gain())
 	_save_settings()
 
 func get_master_gain() -> float:
-	return AudioServer.get_bus_volume_db(0)
+	return AudioServer.get_bus_volume_db(MusicPlayer.MASTER_BUS)
 
 func mute_master(enable: bool) -> void:
-	AudioServer.set_bus_mute(0, enable)
+	AudioServer.set_bus_mute(MusicPlayer.MASTER_BUS, enable)
 	config.set_value("Settings", "master_muted", enable)
 	_save_settings()
 
 func set_music_gain(gain: float) -> void:
-	AudioServer.set_bus_volume_db(1,gain)
+	AudioServer.set_bus_volume_db(MusicPlayer.MUSIC_BUS,gain)
 	config.set_value("Settings", "music_gain", get_music_gain())
 	_save_settings()
 
 func get_music_gain() -> float:
-	return AudioServer.get_bus_volume_db(1)
+	return AudioServer.get_bus_volume_db(MusicPlayer.MUSIC_BUS)
 
 func mute_music(enable: bool) -> void:
-	AudioServer.set_bus_mute(1, enable)
+	AudioServer.set_bus_mute(MusicPlayer.MUSIC_BUS, enable)
 	config.set_value("Settings", "music_muted", enable)
 	_save_settings()
 
 func set_sfx_gain(gain: float) -> void:
-	AudioServer.set_bus_volume_db(2,gain)
+	AudioServer.set_bus_volume_db(MusicPlayer.SFX_BUS,gain)
 	config.set_value("Settings", "sfx_gain", get_sfx_gain())
 	_save_settings()
 
 func get_sfx_gain() -> float:
-	return AudioServer.get_bus_volume_db(2)
+	return AudioServer.get_bus_volume_db(MusicPlayer.SFX_BUS)
 
 func mute_sfx(enable: bool) -> void:
-	AudioServer.set_bus_mute(2, enable)
+	AudioServer.set_bus_mute(MusicPlayer.SFX_BUS, enable)
 	config.set_value("Settings", "sfx_muted", enable)
 	_save_settings()
 

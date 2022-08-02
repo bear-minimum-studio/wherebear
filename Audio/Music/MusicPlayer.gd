@@ -1,5 +1,8 @@
 extends Node
 
+const MASTER_BUS = 0
+const MUSIC_BUS = 1
+const SFX_BUS = 2
 
 onready var sunrise := $Sunrise
 onready var day := $Day
@@ -21,7 +24,7 @@ func stop():
 	night.stop()
 
 func lowpass(enabled):
-	AudioServer.set_bus_effect_enabled(1,0,enabled)
+	AudioServer.set_bus_effect_enabled(MUSIC_BUS,0,enabled)
 
 func dawn():
 	$AnimationPlayer.play("DawnFade")
