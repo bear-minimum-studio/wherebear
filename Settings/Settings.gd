@@ -1,5 +1,7 @@
 extends Control
 
+onready var settings_menu = $UICanvas/SettingsMenu
+
 var config = ConfigFile.new()
 var configPath = "user://settings.cfg"
 
@@ -79,3 +81,6 @@ func get_sfx_gain() -> float:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_fullscreen"):
 		_toggle_fullscreen()
+
+func show_menu_from(calling_scene):
+	settings_menu.show_from(calling_scene)
