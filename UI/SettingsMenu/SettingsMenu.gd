@@ -37,12 +37,24 @@ func _on_FullscreenCheckButton_toggled(button_pressed):
 	Settings.set_fullscreen(button_pressed)
 
 func _on_MasterSlider_value_changed(value):
+	if value == master_slider.min_value:
+		Settings.mute_master(true)
+	else:
+		Settings.mute_master(false)
 	Settings.set_master_gain(value)
 
 func _on_MusicSlider_value_changed(value):
+	if value == music_slider.min_value:
+		Settings.mute_music(true)
+	else:
+		Settings.mute_music(false)
 	Settings.set_music_gain(value)
 
 func _on_SFXSlider_value_changed(value):
+	if value == sfx_slider.min_value:
+		Settings.mute_sfx(true)
+	else:
+		Settings.mute_sfx(false)
 	Settings.set_sfx_gain(value)
 
 func _on_Return_pressed():
