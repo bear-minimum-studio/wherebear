@@ -7,8 +7,6 @@ onready var night := $Night
 
 var is_day := true
 
-func _ready():
-	start()
 
 func start():
 	sunrise.play()

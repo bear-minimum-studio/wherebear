@@ -11,6 +11,7 @@ var game_ended := false
 func _ready():
 	score.init(NUMBER_OF_BEARS, hud)
 	world.init(NUMBER_OF_BEARS)
+	MusicPlayer.start()
 	# warning-ignore:return_value_discarded
 	Events.connect("round_ended", self, "_on_round_ended")
 
