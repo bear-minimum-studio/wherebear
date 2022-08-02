@@ -1,6 +1,10 @@
 extends Control
 class_name SettingsMenu
 
+const MASTER_BUS = MusicPlayer.MASTER_BUS
+const MUSIC_BUS = MusicPlayer.MUSIC_BUS
+const SFX_BUS = MusicPlayer.SFX_BUS
+
 onready var fullscreen_checkbutton = $VBoxContainer/FullscreenCheckButton
 onready var master_slider = $VBoxContainer/AudioVolumes/MasterSlider
 onready var music_slider = $VBoxContainer/AudioVolumes/MusicSlider
@@ -38,24 +42,24 @@ func _on_FullscreenCheckButton_toggled(button_pressed):
 
 func _on_MasterSlider_value_changed(value):
 	if value == master_slider.min_value:
-		Settings.mute_master(true)
+		Settings.mute_bus(MASTER_BUS,true)
 	else:
-		Settings.mute_master(false)
-	Settings.set_master_gain(value)
+		Settings.mute_bus(MASTER_BUS,false)
+	Settings.set_bus_gain(MASTER_BUS,value)
 
 func _on_MusicSlider_value_changed(value):
 	if value == music_slider.min_value:
-		Settings.mute_music(true)
+		Settings.mute_bus(MUSIC_BUS,true)
 	else:
-		Settings.mute_music(false)
-	Settings.set_music_gain(value)
+		Settings.mute_bus(MUSIC_BUS,false)
+	Settings.set_bus_gain(MUSIC_BUS,value)
 
 func _on_SFXSlider_value_changed(value):
 	if value == sfx_slider.min_value:
-		Settings.mute_sfx(true)
+		Settings.mute_bus(SFX_BUS,true)
 	else:
-		Settings.mute_sfx(false)
-	Settings.set_sfx_gain(value)
+		Settings.mute_bus(SFX_BUS,false)
+	Settings.set_bus_gain(SFX_BUS,value)
 
 func _on_Return_pressed():
 	_show_calling_menu()
@@ -64,6 +68,6 @@ func _on_SettingsMenu_visibility_changed():
 	if visible:
 		fullscreen_checkbutton.grab_focus()
 		fullscreen_checkbutton.pressed = Settings.get_fullscreen()
-		master_slider.value = Settings.get_master_gain()
-		music_slider.value = Settings.get_music_gain()
-		sfx_slider.value = Settings.get_sfx_gain()
+		master_slider.value = Settings.get_bus_gain(MASTER_BUS)
+		music_slider.value = Settings.get_bus_gain(MUSIC_BUS)
+		sfx_slider.value = Settings.get_bus_gain(SFX_BUS)
