@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "SettingsMenu",
 "language": "GDScript",
-"path": "res://UI/SettingsMenu/SettingsMenu.gd"
+"path": "res://UI/Menus/SettingsMenu/SettingsMenu.gd"
 }, {
 "base": "Node",
 "class": "State",

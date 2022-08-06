@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/font_default.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/Menus/MenuElements/FocusArrow/FocusArrow.gd" type="Script" id=2]
+
+[node name="FocusArrow" type="Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_right = -916.0
+margin_bottom = -496.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.552941, 0.909804, 0.372549, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+script = ExtResource( 2 )

@@ -6,9 +6,20 @@ const MUSIC_BUS = MusicPlayer.MUSIC_BUS
 const SFX_BUS = MusicPlayer.SFX_BUS
 
 onready var fullscreen_checkbutton = $VBoxContainer/FullscreenCheckButton
+
 onready var master_slider = $VBoxContainer/AudioVolumes/MasterSlider
+onready var master_label = $VBoxContainer/AudioVolumes/MasterLabel
+
 onready var music_slider = $VBoxContainer/AudioVolumes/MusicSlider
+onready var music_label = $VBoxContainer/AudioVolumes/MusicLabel
+
 onready var sfx_slider = $VBoxContainer/AudioVolumes/SFXSlider
+onready var sfx_label = $VBoxContainer/AudioVolumes/SFXLabel
+
+# using HboxContainer so that arrow can be close to return text
+onready var return_button = $VBoxContainer/HBoxContainer/Return
+
+onready var arrow = $FocusArrow
 
 var _calling_scene = null
 
@@ -71,3 +82,19 @@ func _on_SettingsMenu_visibility_changed():
 		master_slider.value = Settings.get_bus_gain(MASTER_BUS)
 		music_slider.value = Settings.get_bus_gain(MUSIC_BUS)
 		sfx_slider.value = Settings.get_bus_gain(SFX_BUS)
+
+
+func _on_FullscreenCheckButton_focus_entered():
+	arrow.focus(fullscreen_checkbutton)
+
+func _on_MasterSlider_focus_entered():
+	arrow.focus(master_label)
+
+func _on_MusicSlider_focus_entered():
+	arrow.focus(music_label)
+
+func _on_SFXSlider_focus_entered():
+	arrow.focus(sfx_label)
+
+func _on_Return_focus_entered():
+	arrow.focus(return_button)

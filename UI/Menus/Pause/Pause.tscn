@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/font_bigger.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Menus/MenuElements/FocusArrow/FocusArrow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Menus/Pause/Pause.gd" type="Script" id=4]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="BackgroundShade" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.121569, 0.113725, 0.113725, 0.682353 )
+
+[node name="FocusArrow" parent="." instance=ExtResource( 3 )]
+
+[node name="VBoxContainerText" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -204.0
+margin_top = -219.0
+margin_right = 204.0
+margin_bottom = 219.0
+custom_constants/separation = 45
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainerText"]
+margin_right = 408.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="WhiteSpace" type="Label" parent="VBoxContainerText"]
+margin_top = 109.0
+margin_right = 408.0
+margin_bottom = 153.0
+
+[node name="ResumeButton" type="Button" parent="VBoxContainerText"]
+margin_top = 198.0
+margin_right = 408.0
+margin_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbour_top = NodePath("../QuitButton")
+focus_neighbour_bottom = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
+focus_previous = NodePath("../QuitButton")
+action_mode = 0
+button_mask = 0
+text = "Resume"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="VBoxContainerText"]
+margin_top = 293.0
+margin_right = 408.0
+margin_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+text = "Settings"
+flat = true
+
+[node name="QuitButton" type="Button" parent="VBoxContainerText"]
+margin_top = 388.0
+margin_right = 408.0
+margin_bottom = 438.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+text = "Quit Game"
+flat = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
+[connection signal="focus_entered" from="VBoxContainerText/ResumeButton" to="." method="_on_ResumeButton_focus_entered"]
+[connection signal="pressed" from="VBoxContainerText/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="focus_entered" from="VBoxContainerText/SettingsButton" to="." method="_on_SettingsButton_focus_entered"]
+[connection signal="pressed" from="VBoxContainerText/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="focus_entered" from="VBoxContainerText/QuitButton" to="." method="_on_QuitButton_focus_entered"]
+[connection signal="pressed" from="VBoxContainerText/QuitButton" to="." method="_on_QuitButton_pressed"]
