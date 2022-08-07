@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=3 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://UI/font_default.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/Menus/MenuElements/toggle_on.svg" type="Texture" id=2]
+[ext_resource path="res://UI/Menus/MenuElements/toggle_on_disable.svg" type="Texture" id=3]
+[ext_resource path="res://UI/Menus/MenuElements/toggle_off_disabled.svg" type="Texture" id=4]
+[ext_resource path="res://UI/Menus/MenuElements/toggle_off.svg" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -11,4 +15,8 @@ Button/colors/font_color_focus = Color( 0.552941, 0.909804, 0.372549, 1 )
 Button/colors/font_color_hover = Color( 0.552941, 0.909804, 0.372549, 1 )
 Button/colors/font_color_pressed = Color( 0.552941, 0.909804, 0.372549, 1 )
 Button/styles/focus = SubResource( 1 )
+CheckButton/icons/off = ExtResource( 5 )
+CheckButton/icons/off_disabled = ExtResource( 4 )
+CheckButton/icons/on = ExtResource( 2 )
+CheckButton/icons/on_disabled = ExtResource( 3 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
