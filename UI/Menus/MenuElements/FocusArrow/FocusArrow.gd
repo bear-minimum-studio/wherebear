@@ -7,10 +7,13 @@ var vertical_offset = 4
 var horizontal_margin = 30
 
 
-func focus(target: Control) -> void:
-	var target_x = target.rect_global_position.x - self.rect_size.x - horizontal_margin
-	var target_y = target.rect_global_position.y + vertical_offset
-	self._move_to(target_x,target_y)
+func focus(node: Control) -> void:
+	# align right size of arrow rect to left side of node including margin
+	var x = (  node.rect_global_position.x
+			 - self.rect_size.x
+			 - horizontal_margin)
+	var y = node.rect_global_position.y + vertical_offset
+	self._move_to(x,y)
 
 func _move_to(x,y) -> void:
 	# if arrow is at default position, works almost everytime :p
