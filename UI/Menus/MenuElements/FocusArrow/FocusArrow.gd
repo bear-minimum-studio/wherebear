@@ -44,5 +44,6 @@ func _interpolate_to(x,y) -> void:
 	tween_y.start()
 
 func _travel_time(x,y) -> float:
-	var distance = sqrt(pow(self.rect_global_position.x - x,2) + pow(self.rect_global_position.y - y,2))
+	var distance = sqrt(  pow(self.rect_global_position.x - x,2) 
+						+ pow(self.rect_global_position.y - y,2))
 	return max(0.07, distance/3700) 
