@@ -1,12 +1,35 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=13 format=2]
 
 [ext_resource path="res://UI/font_default.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/Menus/MenuElements/toggle_on.svg" type="Texture" id=2]
 [ext_resource path="res://UI/Menus/MenuElements/toggle_on_disable.svg" type="Texture" id=3]
 [ext_resource path="res://UI/Menus/MenuElements/toggle_off_disabled.svg" type="Texture" id=4]
 [ext_resource path="res://UI/Menus/MenuElements/toggle_off.svg" type="Texture" id=5]
+[ext_resource path="res://UI/Menus/MenuElements/grabber_disabled.svg" type="Texture" id=6]
+[ext_resource path="res://UI/Menus/MenuElements/grabber_highlight.svg" type="Texture" id=7]
+[ext_resource path="res://UI/Menus/MenuElements/grabber.svg" type="Texture" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 0.878431, 0.878431, 0.878431, 1 )
+grow_begin = -17.0
+grow_end = -10.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id=3]
+content_margin_left = 10.0
+content_margin_right = 10.0
+color = Color( 0.552941, 0.909804, 0.372549, 1 )
+grow_begin = -17.0
+grow_end = -10.0
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id=4]
+color = Color( 0.180392, 0.180392, 0.180392, 1 )
+grow_begin = -17.0
+grow_end = -17.0
+thickness = 6
 
 [resource]
 default_font = ExtResource( 1 )
@@ -19,4 +42,11 @@ CheckButton/icons/off = ExtResource( 5 )
 CheckButton/icons/off_disabled = ExtResource( 4 )
 CheckButton/icons/on = ExtResource( 2 )
 CheckButton/icons/on_disabled = ExtResource( 3 )
+HSlider/icons/grabber = ExtResource( 8 )
+HSlider/icons/grabber_disabled = ExtResource( 6 )
+HSlider/icons/grabber_highlight = ExtResource( 7 )
+HSlider/styles/grabber_area = SubResource( 2 )
+HSlider/styles/grabber_area_highlight = SubResource( 3 )
+HSlider/styles/slider = SubResource( 4 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
+ProgressBar/styles/bg = null
