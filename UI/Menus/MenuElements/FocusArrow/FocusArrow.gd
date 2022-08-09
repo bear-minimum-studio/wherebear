@@ -19,9 +19,20 @@ func focus(node: Control) -> void:
 	var y = node.rect_global_position.y + vertical_offset
 	self._move_to(x,y)
 
+# targets is a dictionnary with 
+# {keys: value} -> {node with signal to watch: node to focus with arrow}
+func track(targets: Dictionary) -> void:
+	for watched in targets.keys():
+		var target = targets[watched]
+		watched.connect("focus_entered", self, "_on_watched_node_focused",[target])
+
+func _on_watched_node_focused(target: Control) -> void:
+	self.focus(target)
+
+
 func _move_to(x,y) -> void:
 	# if arrow is at default position, works almost everytime :p
-	if self.rect_global_position.x == 0:
+	if self.rect_position.x == 0:
 		self._teleport_to(x,y)
 	else:
 		self._interpolate_to(x,y)
