@@ -1,12 +1,10 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://UI/Intro/story_1.png" type="Texture" id=1]
 [ext_resource path="res://UI/theme.tres" type="Theme" id=2]
-[ext_resource path="res://UI/font_smaller.tres" type="DynamicFont" id=3]
 [ext_resource path="res://UI/Intro/Intro.gd" type="Script" id=4]
 [ext_resource path="res://UI/DialogIterator/DialogIterator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Intro/scene_2.png" type="Texture" id=6]
-[ext_resource path="res://UI/Intro/splash.png" type="Texture" id=7]
 [ext_resource path="res://UI/Intro/AnimationTree.gd" type="Script" id=8]
 [ext_resource path="res://UI/Intro/Next_r3.mp3" type="AudioStream" id=9]
 
@@ -50,18 +48,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Story0:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=24]
 resource_name = "End"
@@ -78,60 +64,6 @@ tracks/0/keys = {
 "args": [  ],
 "method": "_on_AnimationPlayer_animation_finished"
 } ]
-}
-
-[sub_resource type="Animation" id=27]
-resource_name = "Menu"
-length = 7.5
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Story0:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Story0:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Story2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -184,30 +116,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0 ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Story0:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("../Story0:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Reverse"
@@ -249,18 +157,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Story0:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=19]
 resource_name = "Scene 2"
@@ -301,18 +197,6 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Story0:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=13]
@@ -357,22 +241,6 @@ node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 [sub_resource type="AnimationNodeAnimation" id=25]
 animation = "End"
 
-[sub_resource type="AnimationNodeAnimation" id=28]
-animation = "Menu"
-
-[sub_resource type="AnimationNodeTimeScale" id=29]
-
-[sub_resource type="AnimationNodeBlendTree" id=30]
-graph_offset = Vector2( -284.592, 105.417 )
-nodes/Animation/node = SubResource( 28 )
-nodes/Animation/position = Vector2( -60, 160 )
-nodes/TimeScale/node = SubResource( 29 )
-nodes/TimeScale/position = Vector2( 140, 140 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
-
-[sub_resource type="AnimationNodeAnimation" id=9]
-animation = "RESET"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 switch_mode = 2
 auto_advance = true
@@ -388,11 +256,6 @@ switch_mode = 2
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=31]
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=32]
-
 [sub_resource type="AnimationNodeStateMachine" id=7]
 "states/Custcene Reverse/node" = SubResource( 15 )
 "states/Custcene Reverse/position" = Vector2( 643, 101 )
@@ -402,12 +265,9 @@ auto_advance = true
 "states/Cutscene 2/position" = Vector2( 899, 101 )
 states/End/node = SubResource( 25 )
 states/End/position = Vector2( 1064, 87 )
-states/Menu/node = SubResource( 30 )
-states/Menu/position = Vector2( 263, 43 )
-states/RESET/node = SubResource( 9 )
-states/RESET/position = Vector2( 44, 55 )
-transitions = [ "Cutscene 1", "Custcene Reverse", SubResource( 17 ), "Custcene Reverse", "Cutscene 1", SubResource( 18 ), "Custcene Reverse", "Cutscene 2", SubResource( 23 ), "Cutscene 2", "End", SubResource( 26 ), "RESET", "Menu", SubResource( 31 ), "Menu", "Cutscene 1", SubResource( 32 ) ]
-start_node = "RESET"
+transitions = [ "Cutscene 1", "Custcene Reverse", SubResource( 17 ), "Custcene Reverse", "Cutscene 1", SubResource( 18 ), "Custcene Reverse", "Cutscene 2", SubResource( 23 ), "Cutscene 2", "End", SubResource( 26 ) ]
+start_node = "Cutscene 1"
+graph_offset = Vector2( 82.6827, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
@@ -416,13 +276,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 4 )
-
-[node name="Story0" type="Sprite" parent="."]
-position = Vector2( 956, 537 )
-scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 4
 
 [node name="Story1" type="Sprite" parent="."]
 visible = false
@@ -445,7 +298,6 @@ root_node = NodePath("../Story1")
 playback_speed = 4.0
 anims/Cutscene = SubResource( 1 )
 anims/End = SubResource( 24 )
-anims/Menu = SubResource( 27 )
 anims/RESET = SubResource( 2 )
 anims/Reverse = SubResource( 3 )
 "anims/Scene 2" = SubResource( 19 )
@@ -457,35 +309,20 @@ parameters/playback = SubResource( 8 )
 "parameters/Custcene Reverse/TimeScale/scale" = 4.0
 "parameters/Cutscene 1/TimeScale/scale" = 4.0
 "parameters/Cutscene 2/TimeScale/scale" = 4.0
-parameters/Menu/TimeScale/scale = 4.0
 script = ExtResource( 8 )
 
-[node name="PressAnyKey" type="Label" parent="."]
-margin_top = 881.0
-margin_right = 1920.0
-margin_bottom = 913.0
-custom_fonts/font = ExtResource( 3 )
+[node name="PressEnter" type="Label" parent="."]
+margin_left = 401.0
+margin_top = 969.0
+margin_right = 1545.0
+margin_bottom = 1013.0
 text = "Press Enter to continue..."
-align = 1
-autowrap = true
 
 [node name="DialogIterator" parent="." instance=ExtResource( 5 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 0.0
 margin_bottom = 0.0
-
-[node name="Empty" type="Label" parent="DialogIterator"]
-visible = false
-margin_left = 395.0
-margin_top = 176.0
-margin_right = 1499.0
-margin_bottom = 267.0
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BearsLivingHappily" type="Label" parent="DialogIterator"]
 visible = false

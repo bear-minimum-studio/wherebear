@@ -93,7 +93,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Wherebear"
-run/main_scene="res://UI/Intro/Intro.tscn"
+run/main_scene="res://UI/Menus/StartMenu/StartMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
