@@ -1,11 +1,15 @@
 extends Label
+class_name FocusArrow
 
-onready var tween_x = $TweenX
-onready var tween_y = $TweenY
+onready var tween_x = Tween.new()
+onready var tween_y = Tween.new()
 
 var vertical_offset = 4
 var horizontal_margin = 30
 
+func _ready():
+	self.add_child(tween_x)
+	self.add_child(tween_y)
 
 func focus(node: Control) -> void:
 	# align right size of arrow rect to left side of node including margin

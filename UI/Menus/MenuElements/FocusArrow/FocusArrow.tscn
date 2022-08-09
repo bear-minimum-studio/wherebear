@@ -17,7 +17,3 @@ custom_colors/font_color = Color( 0.552941, 0.909804, 0.372549, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = ">"
 script = ExtResource( 2 )
-
-[node name="TweenY" type="Tween" parent="."]
-
-[node name="TweenX" type="Tween" parent="."]
