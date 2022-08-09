@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "BaseMenu",
+"language": "GDScript",
+"path": "res://UI/Menus/BaseMenu.gd"
+}, {
+"base": "Label",
+"class": "FocusArrow",
+"language": "GDScript",
+"path": "res://UI/Menus/MenuElements/FocusArrow/FocusArrow.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "GenericBear",
 "language": "GDScript",
@@ -65,6 +75,8 @@ _global_script_classes=[ {
 "path": "res://Bears/WhereBear/Scripts/WhereBear.gd"
 } ]
 _global_script_class_icons={
+"BaseMenu": "",
+"FocusArrow": "",
 "GenericBear": "",
 "GenericBearSprite": "",
 "HitBox": "",
