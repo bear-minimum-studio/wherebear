@@ -6,6 +6,7 @@ var _calling_scene = null
 
 func show_from(calling_scene):
 	self._calling_scene = calling_scene
+	_calling_scene.hide()
 	self.show()
 
 func _show_calling_menu() -> void:
