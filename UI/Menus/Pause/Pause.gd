@@ -5,8 +5,15 @@ onready var settings_button = $VBoxContainerText/SettingsButton
 onready var quit_button = $VBoxContainerText/QuitButton
 onready var arrow = $FocusArrow
 
+onready var arrow_targets = {resume_button: resume_button,
+							 settings_button: settings_button,
+							 quit_button: quit_button}
+
 var _paused := false
 
+
+func _ready():
+	arrow.track(arrow_targets)
 
 func _toggle_pause() -> void:
 	_paused = not _paused
@@ -40,13 +47,3 @@ func _on_SettingsButton_pressed():
 func _on_PauseMenu_visibility_changed():
 	if visible:
 		_default_focus()
-
-
-func _on_ResumeButton_focus_entered():
-	arrow.focus(resume_button)
-
-func _on_SettingsButton_focus_entered():
-	arrow.focus(settings_button)
-
-func _on_QuitButton_focus_entered():
-	arrow.focus(quit_button)

@@ -21,6 +21,16 @@ onready var return_button = $VBoxContainer/HBoxContainer/Return
 
 onready var arrow = $FocusArrow
 
+onready var arrow_targets = {fullscreen_checkbutton: fullscreen_checkbutton,
+							 master_slider: master_label,
+							 music_slider: music_label,
+							 sfx_slider: sfx_label,
+							 return_button: return_button}
+
+
+func _ready():
+	arrow.track(arrow_targets)
+
 func _default_focus() -> void:
 	fullscreen_checkbutton.grab_focus()
 
@@ -70,19 +80,3 @@ func _on_SettingsMenu_visibility_changed():
 		master_slider.value = Settings.get_bus_gain(MASTER_BUS)
 		music_slider.value = Settings.get_bus_gain(MUSIC_BUS)
 		sfx_slider.value = Settings.get_bus_gain(SFX_BUS)
-
-
-func _on_FullscreenCheckButton_focus_entered():
-	arrow.focus(fullscreen_checkbutton)
-
-func _on_MasterSlider_focus_entered():
-	arrow.focus(master_label)
-
-func _on_MusicSlider_focus_entered():
-	arrow.focus(music_label)
-
-func _on_SFXSlider_focus_entered():
-	arrow.focus(sfx_label)
-
-func _on_Return_focus_entered():
-	arrow.focus(return_button)
