@@ -1,4 +1,4 @@
-extends Control
+extends BaseMenu
 class_name SettingsMenu
 
 const MASTER_BUS = MusicPlayer.MASTER_BUS
@@ -21,20 +21,8 @@ onready var return_button = $VBoxContainer/HBoxContainer/Return
 
 onready var arrow = $FocusArrow
 
-var _calling_scene = null
-
-func show_from(calling_scene):
-	visible = true
-	calling_scene.visible = false
-	self._calling_scene = calling_scene
-
-func _show_calling_menu() -> void:
-	visible = false
-	if _calling_scene != null:
-		_calling_scene.show_from(self)
-
-
-
+func _default_focus() -> void:
+	fullscreen_checkbutton.grab_focus()
 
 # If I understand correctly, "pause" event is not part of the control node, 
 # therefore it cannot be processed by _gui_input()
@@ -77,7 +65,7 @@ func _on_Return_pressed():
 
 func _on_SettingsMenu_visibility_changed():
 	if visible:
-		fullscreen_checkbutton.grab_focus()
+		_default_focus()
 		fullscreen_checkbutton.pressed = Settings.get_fullscreen()
 		master_slider.value = Settings.get_bus_gain(MASTER_BUS)
 		music_slider.value = Settings.get_bus_gain(MUSIC_BUS)

@@ -1,4 +1,4 @@
-extends Control
+extends BaseMenu
 
 onready var resume_button = $VBoxContainerText/ResumeButton
 onready var settings_button = $VBoxContainerText/SettingsButton
@@ -6,7 +6,6 @@ onready var quit_button = $VBoxContainerText/QuitButton
 onready var arrow = $FocusArrow
 
 var _paused := false
-var _calling_scene
 
 
 func _toggle_pause() -> void:
@@ -16,10 +15,6 @@ func _toggle_pause() -> void:
 		self.hide()
 	else:
 		self.show_from(self)
-
-func show_from(calling_scene):
-	self._calling_scene = calling_scene
-	self.show()
 
 
 func _unhandled_input(event: InputEvent) -> void:
