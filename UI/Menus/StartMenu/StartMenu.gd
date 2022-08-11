@@ -29,7 +29,3 @@ func _on_SettingsButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
-
-func _on_StartMenu_visibility_changed():
-	if visible:
-		_default_focus()

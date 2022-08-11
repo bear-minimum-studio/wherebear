@@ -3,6 +3,8 @@ class_name BaseMenu
 
 var _calling_scene = null
 
+func _ready():
+	self.connect("visibility_changed", self, "_on_visibility_changed")
 
 func show_from(calling_scene):
 	self._calling_scene = calling_scene
@@ -14,6 +16,11 @@ func _show_calling_menu() -> void:
 	if _calling_scene != null:
 		_calling_scene.show_from(self)
 
-# set button that grab focus when scene is set visible
+# grab focus on the desired button when scene is set visible
 func _default_focus() -> void:
-	assert(false,"This method has to be implemented by children")
+	var msg = "_default_focus method not implemented in {}".format(self.name) # formating should work properly in godot 3.5
+	assert(false, msg)
+
+func _on_visibility_changed() -> void:
+	if visible:
+		_default_focus()

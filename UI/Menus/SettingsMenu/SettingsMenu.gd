@@ -75,7 +75,6 @@ func _on_Return_pressed():
 
 func _on_SettingsMenu_visibility_changed():
 	if visible:
-		_default_focus()
 		fullscreen_checkbutton.pressed = Settings.get_fullscreen()
 		master_slider.value = Settings.get_bus_gain(MASTER_BUS)
 		music_slider.value = Settings.get_bus_gain(MUSIC_BUS)

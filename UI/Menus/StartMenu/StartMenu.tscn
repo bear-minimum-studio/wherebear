@@ -95,7 +95,6 @@ action_mode = 0
 text = "Quit Game"
 flat = true
 
-[connection signal="visibility_changed" from="." to="." method="_on_StartMenu_visibility_changed"]
 [connection signal="pressed" from="VBoxContainerText/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainerText/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="VBoxContainerText/QuitButton" to="." method="_on_QuitButton_pressed"]

@@ -43,7 +43,3 @@ func _on_ResumeButton_pressed():
 
 func _on_SettingsButton_pressed():
 	Settings.show_menu_from(self)
-
-func _on_PauseMenu_visibility_changed():
-	if visible:
-		_default_focus()
