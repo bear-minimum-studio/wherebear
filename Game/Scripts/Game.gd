@@ -5,6 +5,8 @@ const NUMBER_OF_BEARS := 40
 onready var score := $Score
 onready var world := $World
 onready var hud := $UICanvas/HUD
+onready var pause_menu := $UICanvas/Pause
+onready var round_end_display := $UICanvas/RoundEndDisplay
 
 var game_ended := false
 
@@ -37,3 +39,10 @@ func _next_round():
 func _input(event: InputEvent) -> void:
 	if game_ended && event.is_action_pressed("ui_accept"):
 		_next_round()
+
+
+func _on_Pause_visibility_changed():
+	if pause_menu.visible and round_end_display.visible:
+		round_end_display.hide()
+	elif not pause_menu.visible and game_ended:
+		round_end_display.show()

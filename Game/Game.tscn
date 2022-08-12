@@ -17,10 +17,12 @@ script = ExtResource( 4 )
 
 [node name="UICanvas" type="CanvasLayer" parent="."]
 
-[node name="Pause" parent="UICanvas" instance=ExtResource( 3 )]
-visible = false
-
 [node name="RoundEndDisplay" parent="UICanvas" instance=ExtResource( 6 )]
 visible = false
 
+[node name="Pause" parent="UICanvas" instance=ExtResource( 3 )]
+visible = false
+
 [node name="HUD" parent="UICanvas" instance=ExtResource( 2 )]
+
+[connection signal="visibility_changed" from="UICanvas/Pause" to="." method="_on_Pause_visibility_changed"]
