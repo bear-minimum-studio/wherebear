@@ -45,22 +45,23 @@ visible = false
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="OutsideWalls" type="Node2D" parent="Walls"]
+visible = false
 
 [node name="Wall1" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 586, -188 )
+position = Vector2( 586, -120 )
 scale = Vector2( 11.12, 1 )
 
 [node name="Wall2" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 1527, 490 )
+position = Vector2( 1510, 490 )
 rotation = -1.57079
 scale = Vector2( 11.12, 1 )
 
 [node name="Wall3" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( 586, 921 )
+position = Vector2( 586, 885 )
 scale = Vector2( 11.12, 1 )
 
 [node name="Wall4" parent="Walls/OutsideWalls" instance=ExtResource( 2 )]
-position = Vector2( -426, 488 )
+position = Vector2( -407, 488 )
 rotation = -1.57079
 scale = Vector2( 11.12, 1 )
 
