@@ -12,6 +12,7 @@ onready var arrow_targets = {start_button: start_button,
 							 quit_button: quit_button}
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	arrow.track(arrow_targets)
 
 func _default_focus() -> void:
