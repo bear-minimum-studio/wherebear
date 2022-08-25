@@ -4,6 +4,8 @@ class_name FocusArrow
 onready var tween_x = Tween.new()
 onready var tween_y = Tween.new()
 
+onready var _shortFX = $shortFX
+
 var vertical_offset = 4
 var horizontal_margin = 30
 
@@ -52,6 +54,8 @@ func _interpolate_to(x,y) -> void:
 		transition_interpolation_x = Tween.TRANS_EXPO
 		transition_style_x = Tween.EASE_IN
 	
+	_shortFX.play()
+		
 	tween_x.interpolate_property(self, "rect_global_position:x",
 		self.rect_global_position.x, x, transition_time,
 		transition_interpolation_x, transition_style_x)

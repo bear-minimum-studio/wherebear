@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/theme.tres" type="Theme" id=1]
-[ext_resource path="res://UI/Menus/MenuElements/FocusArrow/FocusArrow.gd" type="Script" id=2]
 [ext_resource path="res://UI/Menus/StartMenu/StartMenu.gd" type="Script" id=3]
 [ext_resource path="res://UI/Intro/splash.png" type="Texture" id=4]
+[ext_resource path="res://UI/Menus/MenuElements/FocusArrow/FocusArrow.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animated Background"
@@ -41,12 +41,7 @@ autoplay = "Animated Background"
 playback_speed = 0.8
 "anims/Animated Background" = SubResource( 1 )
 
-[node name="FocusArrow" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 44.0
-custom_colors/font_color = Color( 0.552941, 0.909804, 0.372549, 1 )
-text = ">"
-script = ExtResource( 2 )
+[node name="FocusArrow" parent="." instance=ExtResource( 5 )]
 
 [node name="VBoxContainerText" type="VBoxContainer" parent="."]
 anchor_left = 0.5
