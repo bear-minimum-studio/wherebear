@@ -4,7 +4,6 @@ class_name FocusArrow
 onready var tween_x = Tween.new()
 onready var tween_y = Tween.new()
 
-onready var _shortFX = $shortFX
 
 var vertical_offset = 4
 var horizontal_margin = 30
@@ -19,7 +18,10 @@ func focus(node: Control) -> void:
 			 - self.rect_size.x
 			 - horizontal_margin)
 	var y = node.rect_global_position.y + vertical_offset
-	self._move_to(x,y)
+	if get_parent().is_active:
+		self._move_to(x,y)
+	else:
+		self._teleport_to(x,y)
 
 # targets is a dictionnary with 
 # {keys: value} -> {node with signal to watch: node to focus with arrow}
@@ -54,8 +56,6 @@ func _interpolate_to(x,y) -> void:
 		transition_interpolation_x = Tween.TRANS_EXPO
 		transition_style_x = Tween.EASE_IN
 	
-	_shortFX.play()
-		
 	tween_x.interpolate_property(self, "rect_global_position:x",
 		self.rect_global_position.x, x, transition_time,
 		transition_interpolation_x, transition_style_x)

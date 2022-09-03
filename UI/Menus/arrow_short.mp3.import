@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/arrow_short.mp3-7b4a1e79b3f9659f24badf4598b72ba5.mp3str"
+
+[deps]
+
+source_file="res://UI/Menus/arrow_short.mp3"
+dest_files=[ "res://.import/arrow_short.mp3-7b4a1e79b3f9659f24badf4598b72ba5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
